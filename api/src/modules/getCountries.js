@@ -9,7 +9,7 @@ const getCountries = async () => {
                 name: dato.name.common,
                 flag: dato.flags.png,
                 shield: dato.coatOfArms.png,
-                map: dato.maps.googleMaps,
+                map: dato.maps.openStreetMaps,
                 continent: dato.region,
                 capital: dato.capital,
                 region: dato.subregion,

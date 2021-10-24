@@ -1,5 +1,17 @@
-/* 
-POST /activity:
+const { Router } = require("express");
+const server = require("../app");
+const bulkActivityBD = require("../modules/bulkActivityBD");
+const express = require("express")
 
-Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body
-Crea una actividad turística en la base de datos */
+const router = Router();
+router.use(express.json())
+
+
+router.post('/activity',(req, res, next) =>{
+    let para = req.body;
+    console.log(para)
+    bulkActivityBD(para);
+    res.send('correcto')
+})
+
+module.exports = router;

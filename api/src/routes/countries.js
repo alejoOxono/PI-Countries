@@ -1,36 +1,32 @@
 const { Router } = require("express");
-const getCountries = require("../modules/getCountries");
+const bulkCountryBD = require("../modules/bulkCountryBD");
+// const getCountries = require("../modules/getCountries");
 const router = Router();
 
 
-router.get('/', async (req,res)=>{
-    datos = await getCountries();
+router.get('/', async (req, res, next) => {
+    datos = await bulkCountryBD();
     res.send(datos)
-    
 })
 
 
-router.get('/countries', async (req,res)=>{
+router.get('/countries', async (req, res, next) => {
+    let { name } = req.query
+    // '/countries?name'
     datos = await getCountries();
-    res.send(datos)
-    
+    res.json(datos)
+
 })
 
 
-router.get('/countries/:idPais', async (req,res)=>{
-    let {idPais} = req.params
+router.get('/countries/:idPais', async (req, res, next) => {
+    let { idPais } = req.params
     console.log(idPais)
     datos = await getCountries();
     res.send(datos)
-    
+
 })
 
-
-router.get('/countries?name', async (req,res)=>{
-    datos = await getCountries();
-    res.send(datos)
-    
-})
 
 module.exports = router;
 
