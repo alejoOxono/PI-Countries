@@ -2,18 +2,17 @@ const { conn } = require("../db");
 const { Country, Activity } = conn.models;
 const { Op } = require('sequelize')
 
-const searchCountry = async (country) => {
-    if (!country) {
+const idSearchCountry = async(id)=>{
 
-        let control = await Country.findAll();
-        return control;
+    if (!id || typeof id === 'number') {
+        return null;
     } else {
-        country = country.toUpperCase();
+        id = id.toUpperCase();
 
         let control = await Country.findAll({
             where: {
-                name: {
-                    [Op.iLike]: `%${country}%`
+                id: {
+                    [Op.iLike]: `${id}`
                 }
             },
             include: [Activity],
@@ -23,4 +22,4 @@ const searchCountry = async (country) => {
 }
 
 
-module.exports = searchCountry;
+module.exports = idSearchCountry;

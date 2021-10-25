@@ -10,7 +10,7 @@ const bulkCountryBD = async () => {
         Country.create({
 
             id: country.id,
-            name: country.name,
+            name: country.name.toUpperCase(),
             flag: country.flag,
             shield: country.shield,
             map: country.map,
@@ -21,9 +21,7 @@ const bulkCountryBD = async () => {
             population: country.population
 
         })
-    })
-    return 'correcto'
-
+    });
 
 }
 

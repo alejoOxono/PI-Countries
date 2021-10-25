@@ -7,9 +7,9 @@ const router = Router();
 router.use(express.json())
 
 
-router.post('/activity',(req, res, next) =>{
+router.post('/activity',(req, res) =>{
     let para = req.body;
-    console.log(para)
+    // console.log(para)
     bulkActivityBD(para);
     res.send('correcto')
 })

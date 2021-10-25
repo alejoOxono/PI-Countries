@@ -27,7 +27,7 @@ const getActivities = async(dato) => {
             return activities
         }
     }catch(err){
-        next(err)
+        new Error(err);
     }
 }
 

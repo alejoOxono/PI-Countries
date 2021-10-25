@@ -1,30 +1,53 @@
 const { Router } = require("express");
 const bulkCountryBD = require("../modules/bulkCountryBD");
+const idSearchCountry = require("../modules/idSearchCountry");
+const searchCountry = require("../modules/searchCountry");
+const validation = require("../modules/validation");
 // const getCountries = require("../modules/getCountries");
 const router = Router();
 
 
 router.get('/', async (req, res, next) => {
-    datos = await bulkCountryBD();
-    res.send(datos)
+    try {
+
+        let valor = await validation();
+        if (valor === false) await bulkCountryBD();
+
+        res.send('correcto');
+
+    } catch (err) {
+        next(err)
+    }
 })
 
 
 router.get('/countries', async (req, res, next) => {
-    let { name } = req.query
-    // '/countries?name'
-    datos = await getCountries();
-    res.json(datos)
+    try {
 
+        let { name } = req.query;
+        let valor = await validation();
+        if (valor === false) await bulkCountryBD();
+        let resultado = await searchCountry(name);
+        res.send(resultado);
+
+    } catch (err) {
+        next(err)
+    }
 })
 
 
 router.get('/countries/:idPais', async (req, res, next) => {
-    let { idPais } = req.params
-    console.log(idPais)
-    datos = await getCountries();
-    res.send(datos)
+    try {
 
+        let { idPais } = req.params;
+        let valor = await validation();
+        if (valor === false) await bulkCountryBD();
+        let resultado = await idSearchCountry(idPais);
+        res.json(resultado);
+
+    } catch (err) {
+        next(err)
+    }
 })
 
 
