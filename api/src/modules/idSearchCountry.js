@@ -15,7 +15,7 @@ const idSearchCountry = async(id)=>{
                     [Op.iLike]: `${id}`
                 }
             },
-            include: [Activity],
+            include: [...Activity],
         })
         return control;
     }

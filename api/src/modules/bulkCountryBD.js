@@ -1,7 +1,7 @@
 const { conn } = require("../db");
 const getCountries = require("./getCountries");
 
-const { Country } = conn.models;
+const { Country, Activity } = conn.models;
 
 
 const bulkCountryBD = async () => {
@@ -19,8 +19,8 @@ const bulkCountryBD = async () => {
             region: country.region,
             area: country.area,
             population: country.population
-
-        })
+        }
+        )
     });
 
 }
