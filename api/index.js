@@ -19,10 +19,16 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const bulkCountryBD = require('./src/modules/bulkCountryBD.js');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
+  try{
+    server.listen(3001, async() => {
+      console.log('%s listening at 3001');
+      await bulkCountryBD(); // eslint-disable-line no-console
+    });
+  }catch(err){
+    console.log(err);
+  }
 });

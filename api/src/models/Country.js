@@ -22,12 +22,10 @@ module.exports = (sequelize) => {
 
     shield:{
       type: DataTypes.STRING,
-      allowNull: false,
     },
 
     map:{
       type: DataTypes.STRING,
-      allowNull: false,
     },
 
     continent:{

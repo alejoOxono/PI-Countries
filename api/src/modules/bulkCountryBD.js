@@ -1,28 +1,25 @@
 const { conn } = require("../db");
-const getCountries = require("./getCountries");
-
-const { Country, Activity } = conn.models;
+const axios = require('axios');
+const { Country } = conn.models;
 
 
 const bulkCountryBD = async () => {
-    let data = await getCountries();
-    data.forEach(async (country) => {
-        Country.create({
 
-            id: country.id,
-            name: country.name.toUpperCase(),
-            flag: country.flag,
-            shield: country.shield,
-            map: country.map,
-            continent: country.continent,
-            capital: country.capital[0],
-            region: country.region,
-            area: country.area,
-            population: country.population
-        }
-        )
+    const data = await axios.get('https://restcountries.com/v3.1/all');
+    const apiData = data.data.forEach(async (dato) => {
+        Country.create({
+            id: dato.cca3,
+            name: dato.name.common.toUpperCase(),
+            flag: dato.flags.png ? dato.flags.png : null,
+            shield: dato.coatOfArms.png ? dato.coatOfArms.png : null,
+            map: dato.maps.openStreetMaps ? dato.maps.openStreetMaps : null,
+            continent: dato.region ? dato.region : null,
+            capital: dato.capital[0] ? dato.capital[0] : dato.capital ? dato.capital : null,
+            region: dato.subregion ? dato.subregion : null,
+            area: dato.area,
+            population: dato.population
+        });
     });
 
 }
-
 module.exports = bulkCountryBD;

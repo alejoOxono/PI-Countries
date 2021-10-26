@@ -1,5 +1,4 @@
 import { Op } from "sequelize/types";
-import { noExtendLeft } from "sequelize/types/lib/operators";
 import Country from "../models/Country";
 import TuriscActivity from "../models/TuriscActivity";
 
