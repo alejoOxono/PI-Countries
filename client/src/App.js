@@ -1,11 +1,25 @@
-import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import Countries from './Components/Countries';
+import Intro from './Components/Intro';
 
 
 function App() {
   return (
     <div className="App">
-      <h1>Henry Countries</h1>
+      <Switch>
+        <Route
+          path='/countries'
+          render={() => <Countries />}
+        />
+      </Switch>
+      <Switch>
+        <Route
+          path='/'
+          render={() => <Intro />}
+        />
+      </Switch>
     </div>
+
   );
 }
 

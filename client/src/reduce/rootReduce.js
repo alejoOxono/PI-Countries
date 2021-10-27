@@ -10,7 +10,11 @@ const rootReduce = (state=stateInitial, {type, payload}) => {
     switch(type){
         
         case GET_COUNTRIES:
-            return state;
+            console.log(state.dataBaseCountry)
+            return {
+                ...state,
+                dataBaseCountry:payload.data
+            };
 
         case SEARCH_COUNTRY:
             return state;

@@ -10,7 +10,7 @@ router.get('/', async (req, res, next) => {
     try {
 
         let resultado = await searchCountry();
-        res.send(resultado);
+        res.json(resultado);
 
     } catch (err) {
         next(err)
@@ -23,7 +23,7 @@ router.get('/countries', async (req, res, next) => {
 
         let { name } = req.query;
         let resultado = await searchCountry(name);
-        res.send(resultado);
+        res.json(resultado);
 
     } catch (err) {
         next(err)

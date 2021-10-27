@@ -11,7 +11,7 @@ router.post('/activity',(req, res) =>{
     let para = req.body;
     // console.log(para)
     bulkActivityBD(para);
-    res.send('correcto');
+    res.json('correcto');
 })
 
 module.exports = router;
