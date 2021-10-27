@@ -10,6 +10,10 @@ export const getCountries = () => {
                     payload: data
                 })
             })
+            .catch((err)=>{
+              //dispatch de error
+              console.log(err);  
+            })
     }
 }
 

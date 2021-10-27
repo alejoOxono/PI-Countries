@@ -1,0 +1,47 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;
+  grid-template-rows: 0.5fr 1.5fr 1.5fr 1fr 1fr 1fr 0.5fr 0.5fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    "Nav Nav Nav Nav Nav"
+    "Imagenes Imagenes Imagenes Imagenes Imagenes"
+    "nada Search Search Search nada2"
+    "nada Body1 Body2 Body3 nada2"
+    "nada Body4 Body5 Body6 nada2"
+    "nada Body7 Body8 Body9 nada2"
+    "Paginacion Paginacion Paginacion Paginacion Paginacion"
+    "Footer Footer Footer Footer Footer";
+}
+
+.Nav { grid-area: Nav; }
+
+.Imagenes { grid-area: Imagenes; }
+
+.Search { grid-area: Search; }
+
+.Body1 { grid-area: Body1; }
+
+.Body2 { grid-area: Body2; }
+
+.Body3 { grid-area: Body3; }
+
+.Body4 { grid-area: Body4; }
+
+.Body5 { grid-area: Body5; }
+
+.Body6 { grid-area: Body6; }
+
+.Body7 { grid-area: Body7; }
+
+.Body8 { grid-area: Body8; }
+
+.Body9 { grid-area: Body9; }
+
+.Paginacion { grid-area: Paginacion; }
+
+.Footer { grid-area: Footer; }
+
+.nada { grid-area: nada; }
+
+.nada2 { grid-area: nada2; }

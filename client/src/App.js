@@ -8,16 +8,18 @@ function App() {
     <div className="App">
       <Switch>
         <Route
+          exact path='/'
+          render={() => <Intro />}
+        />
+      </Switch>
+      
+      <Switch>
+        <Route
           path='/countries'
           render={() => <Countries />}
         />
       </Switch>
-      <Switch>
-        <Route
-          path='/'
-          render={() => <Intro />}
-        />
-      </Switch>
+      
     </div>
 
   );
