@@ -1,17 +1,21 @@
-import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 
-const AllCountries = ({el}) => {
-    const countries = useSelector((state) => state.dataBaseCountry)
+const AllCountries = ({ el }) => {
+
+
 
     return (
-    <>
-        <p>{el.id}</p>
-        <p>{el.name}</p>
-        <img src={el.flag ? el.flag : 'no existe'} alt='flag' />
-        <p>{el.population}</p>
-        <p>{el.capital}</p>
-    </>
+        <>
+            <NavLink to={`/countries/${el.id}`}>
+                <p>{el.name}</p>
+            </NavLink>
+
+            <img src={el.flag ? el.flag : 'no existe'} alt='flag' />
+            <p>{el.id}</p>
+            <p>{el.population}</p>
+            <p>{el.capital}</p>
+        </>
 
     )
 

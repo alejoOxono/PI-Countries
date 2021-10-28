@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries } from '../actions/actionsCreator';
 import Carousel from './Carousel';
@@ -7,16 +7,31 @@ import '../css-module/Countries.css'
 import AllCountries from './AllCountries';
 import Search from './Search';
 import Footer from './Footer';
+import Pagination from './Pagination';
+import Filter from './Filters';
+import { NavLink } from 'react-router-dom';
 
 const Countries = () => {
+
+    const countries = useSelector((state) => state.countriesFiltered);
+    const dispatch = useDispatch();
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [dataPerPage, setDataPerPage] = useState(9);
+    const lastData = dataPerPage * currentPage;
+    const firstData = lastData - dataPerPage;
+    const currentCountriesShow = countries.slice(firstData, lastData);
+
     var body = 0;
-    const countries = useSelector((state) => state.dataBaseCountry)
-    const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(getCountries())
-    }, [])
+    }, [dispatch])
 
+    const paginar = (page) => {
+        setCurrentPage(page)
+    }
+    console.log(countries)
     const bodyIter = () => {
         if (body >= 9) {
             body = 1;
@@ -42,10 +57,11 @@ const Countries = () => {
             <div className="nada"></div>
 
             <div className='Search'>
-                <Search/>
+                <Filter paginar={paginar}/>
+                <Search />
             </div>
 
-            {countries.map((el) => {
+            {currentCountriesShow.map((el) => {
                 return (
                     <div className={bodyIter()}>
                         <AllCountries el={el} />
@@ -55,10 +71,10 @@ const Countries = () => {
 
             <div className="nada2"></div>
             <div className='Paginacion'>
-
+                <Pagination pageFunction={paginar} data={dataPerPage} current={currentPage} />
             </div>
             <div className='Footer'>
-                <Footer/>
+                <Footer />
             </div>
         </div>
 

@@ -2,8 +2,7 @@ const { conn } = require("../db");
 const { Activity } = conn.models;
 
 const bulkActivityBD = async (para) => {
-    if (!para.country) return null;
-    console.log(!await findActivity({ name: para.name }))
+    if (!para.country || !para.name) return null;
     if (!await findActivity({ name: para.name })) {
 
         await Activity.create({
@@ -14,19 +13,10 @@ const bulkActivityBD = async (para) => {
         })
 
     }
-    if (typeof para.country === 'array') {
-        let arr = para.country;
-        let reg = await findActivity({ name: para.name });
-        arr.forEach(async (el) => {
-            console.log(el)
-            await reg.addCountry(el);
-        });
-    }
-    if (typeof para.country === 'string') {
 
         let reg = await findActivity({ name: para.name });
         await reg.addCountry(para.country);
-    }
+
 
 }
 

@@ -5,7 +5,7 @@ const { Op } = require('sequelize')
 const searchCountry = async (country) => {
     if (!country) {
 
-        let control = await Country.findAll();
+        let control = await Country.findAll({include: [Activity]});
         return control;
     } else {
         country = country.toUpperCase();
