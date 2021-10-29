@@ -1,4 +1,4 @@
-import { ADD_ACTIVITY, COUNTRY, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, GET_COUNTRIES, SEARCH_COUNTRY } from "./constants";
+import { ADD_ACTIVITY, COUNTRY, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_COUNTRIES, SEARCH_COUNTRY_BY_NAME } from "./constants";
 const axios = require('axios');
 
 export const getCountries = () => {
@@ -26,7 +26,7 @@ export const filterCountriesByContinent = (continent) => {
 }
 
 
-export const filterCountriesByName = (orden) => {
+export const filterCountriesOrdName = (orden) => {
     return {
         type: FILTER_COUNTRIES_ORD_NAME,
         payload: orden
@@ -34,11 +34,25 @@ export const filterCountriesByName = (orden) => {
 }
 
 
-export const searchCountry = () => {
+export const filterCountriesOrdPopulation = (orden) => {
     return {
-        type: SEARCH_COUNTRY,
-        payload: 'nada'
+        type: FILTER_COUNTRIES_ORD_POPULATION,
+        payload: orden
     }
+}
+
+
+export const searchCountry = (name) => {
+    return function (dispatch) {
+        return axios.get(`http://localhost:3001/countries?name=${name}`)
+            .then((data) => {
+                dispatch({
+                    type: SEARCH_COUNTRY_BY_NAME,
+                    payload: data.data
+                })
+            })
+    }
+
 }
 
 

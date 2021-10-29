@@ -12,16 +12,12 @@ function App() {
           exact path='/'
           render={() => <Intro />}
         />
-      </Switch>
 
-      <Switch>
         <Route
           path='/countries'
           render={() => <Countries />}
         />
-      </Switch>
 
-      <Switch>
         <Route
           exact path='/countries/:id'
           render={() => <Country />}

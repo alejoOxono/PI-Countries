@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { filterCountriesByContinent, filterCountriesByName } from "../actions/actionsCreator";
+import { filterCountriesByContinent, filterCountriesOrdName, filterCountriesOrdPopulation } from "../actions/actionsCreator";
 
 
-const Filter = ({ paginar }) => {
+const Filter = ({ paginar , setOrden}) => {
     const dispatch = useDispatch()
     const filtrados = useSelector((state) => state.countriesFiltered)
 
@@ -13,8 +13,17 @@ const Filter = ({ paginar }) => {
     }
 
     const handlerName = (e) => {
-        e.preventDefault();
-        dispatch(filterCountriesByName(e.target.value));
+        e.preventDefault()
+        dispatch(filterCountriesOrdName(e.target.value));
+        paginar(1);
+        setOrden(`Ordenado ${e.target.value}`)
+    }
+
+    const handlerPopulation = (e) => {
+        e.preventDefault()
+        dispatch(filterCountriesOrdPopulation(e.target.value));
+        paginar(1);
+        setOrden(`Ordenado ${e.target.value}`)
     }
 
     return (
@@ -31,13 +40,13 @@ const Filter = ({ paginar }) => {
 
             <div>
                 <select onChange={(e) => handlerName(e)}>
-                    <option disabled>------</option>
+                    <option disabled selected>------</option>
                     <option value='asc'>Ascendente</option>
                     <option value='desc'>Descendente</option>
                 </select>
 
-                <select>
-                    <option disabled>------</option>
+                <select onChange={(e) => handlerPopulation(e)}>
+                    <option disabled selected>------</option>
                     <option value='asc'>Ascendente</option>
                     <option value='desc'>Descendente</option>
                 </select>

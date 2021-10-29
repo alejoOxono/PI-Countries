@@ -16,6 +16,7 @@ const Countries = () => {
     const countries = useSelector((state) => state.countriesFiltered);
     const dispatch = useDispatch();
 
+    const [orden, setOrden] = useState();
     const [currentPage, setCurrentPage] = useState(1);
     const [dataPerPage, setDataPerPage] = useState(9);
     const lastData = dataPerPage * currentPage;
@@ -31,7 +32,7 @@ const Countries = () => {
     const paginar = (page) => {
         setCurrentPage(page)
     }
-    console.log(countries)
+
     const bodyIter = () => {
         if (body >= 9) {
             body = 1;
@@ -57,8 +58,8 @@ const Countries = () => {
             <div className="nada"></div>
 
             <div className='Search'>
-                <Filter paginar={paginar}/>
-                <Search />
+                <Filter paginar={paginar} setOrden={setOrden} />
+                <Search setOrden={setOrden}/>
             </div>
 
             {currentCountriesShow.map((el) => {

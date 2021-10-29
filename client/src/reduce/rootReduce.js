@@ -1,4 +1,4 @@
-import { ADD_ACTIVITY, COUNTRY, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, GET_COUNTRIES, SEARCH_COUNTRY } from "../actions/constants";
+import { ADD_ACTIVITY, COUNTRY, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_COUNTRIES, SEARCH_COUNTRY_BY_NAME } from "../actions/constants";
 
 const stateInitial = {
     dataBaseCountry: [],
@@ -13,8 +13,8 @@ const rootReduce = (state = stateInitial, { type, payload }) => {
         case GET_COUNTRIES:
             return {
                 ...state,
-                dataBaseCountry: payload,
-                countriesFiltered: payload
+                countriesFiltered: payload,
+                dataBaseCountry: payload
             };
 
         case FILTER_COUNTRIES_BY_CONTINENT:
@@ -25,14 +25,60 @@ const rootReduce = (state = stateInitial, { type, payload }) => {
             }
 
         case FILTER_COUNTRIES_ORD_NAME:
-            let newArrayFilteredByName = (payload === 'asc' ? state.countriesFiltered.sort((country)=>country.name):[])
+            let arrayFilteredByName = (payload === 'asc' ? 
+            state.countriesFiltered.sort(function (a, b) {
+                if (a.name > b.name) {
+                    return 1;
+                }
+                if (b.name > a.name) {
+                    return -1;
+                }
+                return 0;
+            }) :
+                state.countriesFiltered.sort(function (a, b) {
+                    if (a.name > b.name) {
+                        return -1;
+                    }
+                    if (b.name > a.name) {
+                        return 1;
+                    }
+                    return 0;
+                }));
             return {
                 ...state,
-                countriesFiltered: newArrayFilteredByName
+                countriesFiltered: arrayFilteredByName
             }
 
-        case SEARCH_COUNTRY:
-            return state;
+        case FILTER_COUNTRIES_ORD_POPULATION:
+            let arrayFilteredByPopulation = (payload === 'asc' ? 
+            state.countriesFiltered.sort(function (a, b) {
+                if (a.population > b.population) {
+                    return 1;
+                }
+                if (b.population > a.population) {
+                    return -1;
+                }
+                return 0;
+            }) :
+                state.countriesFiltered.sort(function (a, b) {
+                    if (a.population > b.population) {
+                        return -1;
+                    }
+                    if (b.population > a.population) {
+                        return 1;
+                    }
+                    return 0;
+                }));
+            return {
+                ...state,
+                countriesFiltered: arrayFilteredByPopulation
+            }
+
+        case SEARCH_COUNTRY_BY_NAME:
+            return {
+                ...state,
+                countriesFiltered: payload
+            }
 
         case COUNTRY:
             return state;

@@ -1,7 +1,7 @@
 .gridContainer {
   display: grid;
-  grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;
-  grid-template-rows: 0.5fr 1.5fr 1.5fr 1fr 1fr 1fr 0.5fr 0.5fr;
+  grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr;
+  grid-template-rows: 0.5fr 1.5fr 1.5fr 1fr 1fr 1fr 0.5fr 0.4fr;
   gap: 5px 5px;
   grid-template-areas:
     "Nav Nav Nav Nav Nav"

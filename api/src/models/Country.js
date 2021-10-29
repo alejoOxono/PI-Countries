@@ -22,9 +22,14 @@ module.exports = (sequelize) => {
 
     shield:{
       type: DataTypes.STRING,
+      allowNull: true,
     },
 
     map:{
+      type: DataTypes.STRING,
+    },
+
+    info:{
       type: DataTypes.STRING,
     },
 
