@@ -37,6 +37,7 @@
 .Body8 { grid-area: Body8; }
 
 .Body9 { grid-area: Body9; }
+
 .Paginacion { grid-area: Paginacion; }
 
 .Footer { grid-area: Footer; }
@@ -44,3 +45,4 @@
 .nada { grid-area: nada; }
 
 .nada2 { grid-area: nada2; }
+

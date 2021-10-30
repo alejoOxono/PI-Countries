@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { filterCountriesByContinent, filterCountriesOrdName, filterCountriesOrdPopulation } from "../actions/actionsCreator";
+import { filterCountriesByContinent, filterCountriesOrdName, filterCountriesOrdPopulation, getActivities } from "../actions/actionsCreator";
 
 
 const Filter = ({ paginar , setOrden}) => {
-    const dispatch = useDispatch()
-    const filtrados = useSelector((state) => state.countriesFiltered)
+    const filtrados = useSelector((state) => state.countriesFiltered);
+    const activities = useSelector((state)=> state.dataBaseActivities);
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(getActivities())
+    },[])
 
     const handlerContinent = (e) => {
         e.preventDefault();
@@ -40,21 +46,26 @@ const Filter = ({ paginar , setOrden}) => {
 
             <div>
                 <select onChange={(e) => handlerName(e)}>
-                    <option disabled selected>------</option>
+                    <option disabled selected>Orden alfabético</option>
                     <option value='asc'>Ascendente</option>
                     <option value='desc'>Descendente</option>
                 </select>
 
                 <select onChange={(e) => handlerPopulation(e)}>
-                    <option disabled selected>------</option>
+                    <option disabled selected>Orden poblacional</option>
                     <option value='asc'>Ascendente</option>
                     <option value='desc'>Descendente</option>
                 </select>
             </div>
-            {/* 
+
             <div>
-                {}// map para actividades
-            </div> */}
+                <select onChange={(e) => handlerPopulation(e)}>
+                <option disabled selected>Actividades</option>
+                {activities?.map((el)=>{
+                    <option value={el.name}>{el.name}</option>
+                })}
+                </select>
+            </div>
 
         </div>
     )

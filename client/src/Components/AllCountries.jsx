@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
-
+import { Link  } from 'react-router-dom';
 
 const AllCountries = ({ el }) => {
-
 
 
     return (
@@ -12,10 +10,9 @@ const AllCountries = ({ el }) => {
             </Link>
 
             <img src={el.flag} alt='flag' />
-            {/* <img src={el.map} alt='MAP NOT FOUND' /> */}
-            <p>{el.id}</p>
-            <p>{el.population}</p>
+            <p>{el.region}</p>
             <p>{el.capital}</p>
+            <p>{el.population}</p>
         </>
 
     )

@@ -1,15 +1,14 @@
+import '../css-module/Countries.css'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries } from '../actions/actionsCreator';
 import Carousel from './Carousel';
 import Nav from './Nav';
-import '../css-module/Countries.css'
 import AllCountries from './AllCountries';
 import Search from './Search';
 import Footer from './Footer';
 import Pagination from './Pagination';
 import Filter from './Filters';
-import { NavLink } from 'react-router-dom';
 
 const Countries = () => {
 
@@ -57,7 +56,7 @@ const Countries = () => {
 
             <div className="nada"></div>
 
-            <div className='Search'>
+            <div className='Search'  style={{display:''}}>
                 <Filter paginar={paginar} setOrden={setOrden} />
                 <Search setOrden={setOrden}/>
             </div>

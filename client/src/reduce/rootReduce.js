@@ -1,15 +1,16 @@
-import { ADD_ACTIVITY, COUNTRY, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_COUNTRIES, SEARCH_COUNTRY_BY_NAME } from "../actions/constants";
+import { ADD_ACTIVITY, COUNTRY_SELECTED, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_ACTIVITIES, GET_COUNTRIES, SEARCH_COUNTRY_BY_NAME } from "../actions/constants";
 
 const stateInitial = {
     dataBaseCountry: [],
+    dataBaseActivities: [],
     countriesFiltered: [],
-    country: {},
-    activity: {}
+    countryPage: {},
 }
 
 const rootReduce = (state = stateInitial, { type, payload }) => {
     switch (type) {
 
+        
         case GET_COUNTRIES:
             return {
                 ...state,
@@ -17,12 +18,14 @@ const rootReduce = (state = stateInitial, { type, payload }) => {
                 dataBaseCountry: payload
             };
 
+        
         case FILTER_COUNTRIES_BY_CONTINENT:
             let newArrayFiltered = (payload === 'All' ? state.dataBaseCountry : state.dataBaseCountry.filter((country) => country.continent === payload));
             return {
                 ...state,
                 countriesFiltered: newArrayFiltered
-            }
+            };
+
 
         case FILTER_COUNTRIES_ORD_NAME:
             let arrayFilteredByName = (payload === 'asc' ? 
@@ -47,7 +50,8 @@ const rootReduce = (state = stateInitial, { type, payload }) => {
             return {
                 ...state,
                 countriesFiltered: arrayFilteredByName
-            }
+            };
+
 
         case FILTER_COUNTRIES_ORD_POPULATION:
             let arrayFilteredByPopulation = (payload === 'asc' ? 
@@ -72,19 +76,30 @@ const rootReduce = (state = stateInitial, { type, payload }) => {
             return {
                 ...state,
                 countriesFiltered: arrayFilteredByPopulation
-            }
+            };
+
 
         case SEARCH_COUNTRY_BY_NAME:
             return {
                 ...state,
                 countriesFiltered: payload
+            };
+
+
+        case COUNTRY_SELECTED:
+            return {
+                ...state,
+                countryPage: payload
+            }; 
+
+
+        case GET_ACTIVITIES:
+            return{
+                ...state,
+                dataBaseActivities: payload
             }
 
-        case COUNTRY:
-            return state;
-
-        case ADD_ACTIVITY:
-            return state;
+        
 
         default:
             return state;

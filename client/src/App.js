@@ -14,14 +14,15 @@ function App() {
         />
 
         <Route
+          path='/countries/:id'
+          render={() => <Country />}
+        />
+        
+        <Route
           path='/countries'
           render={() => <Countries />}
         />
 
-        <Route
-          exact path='/countries/:id'
-          render={() => <Country />}
-        />
       </Switch>
 
     </div>

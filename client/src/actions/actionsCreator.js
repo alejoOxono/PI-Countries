@@ -1,4 +1,4 @@
-import { ADD_ACTIVITY, COUNTRY, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_COUNTRIES, SEARCH_COUNTRY_BY_NAME } from "./constants";
+import { ADD_ACTIVITY, COUNTRY_SELECTED, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_ACTIVITIES, GET_COUNTRIES, SEARCH_COUNTRY_BY_NAME } from "./constants";
 const axios = require('axios');
 
 export const getCountries = () => {
@@ -51,22 +51,55 @@ export const searchCountry = (name) => {
                     payload: data.data
                 })
             })
+            .catch((err) => {
+                //dispatch de error
+                console.log(err);
+            })
     }
 
 }
 
 
-export const country = () => {
-    return {
-        type: COUNTRY,
-        payload: 'nada'
+export const countrySelected = (id) => {
+    return function (dispatch) {
+        return axios.get(`http://localhost:3001/countries/${id}`)
+            .then((data) => {
+                dispatch({
+                    type: COUNTRY_SELECTED,
+                    payload: data.data[0]
+                })
+            })
+            .catch((err) => {
+                //dispatch de error
+                console.log(err);
+            })
     }
 }
 
 
-export const addActivity = () => {
-    return {
-        type: ADD_ACTIVITY,
-        payload: 'nada'
+export const addActivity = (form) => {
+    return function(dispatch){
+        return axios.post('http://localhost:3001/activity', form)
+        .then((data)=>data)
+        .catch((err) => {
+            //dispatch de error
+            console.log(err);
+        })
+    }
+}
+
+export const getActivities = () => {
+    return function(dispatch){
+        return axios.get('http://localhost:3001/activity')
+        .then((data)=>{
+            dispatch({
+                type: GET_ACTIVITIES,
+                payload: data.data
+            })
+        })
+        .catch((err) => {
+            //dispatch de error
+            console.log(err);
+        })
     }
 }
