@@ -1,4 +1,4 @@
-import { ADD_ACTIVITY, COUNTRY_SELECTED, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_ACTIVITIES, GET_COUNTRIES, SEARCH_COUNTRY_BY_NAME } from "./constants";
+import { ADD_ACTIVITY, COUNTRY_SELECTED, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_ACTIVITIES, GET_COUNTRIES, SEARCH_COUNTRY_BY_ACTIVITY, SEARCH_COUNTRY_BY_NAME } from "./constants";
 const axios = require('axios');
 
 export const getCountries = () => {
@@ -80,7 +80,9 @@ export const countrySelected = (id) => {
 export const addActivity = (form) => {
     return function(dispatch){
         return axios.post('http://localhost:3001/activity', form)
-        .then((data)=>data)
+        .then((data)=>{
+            return data
+        })
         .catch((err) => {
             //dispatch de error
             console.log(err);
@@ -101,5 +103,13 @@ export const getActivities = () => {
             //dispatch de error
             console.log(err);
         })
+    }
+}
+
+
+export const searchCountryByActivity = (activity) => {
+    return {
+        type: SEARCH_COUNTRY_BY_ACTIVITY,
+        payload: activity
     }
 }

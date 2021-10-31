@@ -12,7 +12,7 @@ const Search = ({setOrden}) =>{
 
     return(
         <div>
-            <input type='text' placeholder='Search Country...' onChange={(e)=>searchByCountry(e)}/>
+            <input type='text' placeholder='Busqueda por País ...' onChange={(e)=>searchByCountry(e)}/>
         </div>
     )
 }

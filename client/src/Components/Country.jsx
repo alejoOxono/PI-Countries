@@ -15,7 +15,7 @@ const Country = () => {
     useEffect(() => {
         dispatch(countrySelected(id))
     }, [dispatch])
-    
+
 
     return (
         <div className={styles.gridContainer}>
@@ -30,6 +30,17 @@ const Country = () => {
             </div>
             <div className={styles.Info}>
                 my info
+                <h2>Actividades</h2>
+                {country.activities?.map((activity) => {
+                    return <>
+                        <ul>
+                            <p>{activity.name}</p>
+                            <li>{activity.dificulty}</li>
+                            <li>{activity.duration}</li>
+                            <li>{activity.season}</li>
+                        </ul>
+                    </>
+                })}
             </div>
             <div className={styles.Simbolos}></div>
 
