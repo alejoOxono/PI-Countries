@@ -1,7 +1,8 @@
 .gridContainer {
   display: grid;
-  grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr;
-  grid-template-rows: 0.5fr 1.5fr 1.5fr 1fr 1fr 1fr 0.5fr 0.4fr;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  grid-template-columns: 0.4fr 1fr 1fr 1fr 0.4fr;
+  grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr 0.5fr 0.2fr;
   gap: 5px 5px;
   grid-template-areas:
     "Nav Nav Nav Nav Nav"
@@ -46,3 +47,7 @@
 
 .nada2 { grid-area: nada2; }
 
+.Nav{
+  box-shadow: 0 10px 20px -5px rgba(121, 121, 121, 0.125);
+
+}

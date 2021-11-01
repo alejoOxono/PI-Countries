@@ -1,0 +1,12 @@
+.all{
+    display: flex;
+}
+
+.contFig{
+    margin: 0;
+    margin-left: 5%;
+}
+
+.contFig img{
+    height: 100px;
+}

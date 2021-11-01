@@ -5,7 +5,7 @@ import { getCountries } from '../actions/actionsCreator'
 import styles from '../css-module/Intro.module.css'
 
 
-const Intro = () => {
+const LandPage = () => {
     const countries = useSelector((state) => state.dataBaseCountry)
     const dispatch = useDispatch()
 
@@ -22,4 +22,4 @@ const Intro = () => {
     )
 }
 
-export default Intro;
+export default LandPage;

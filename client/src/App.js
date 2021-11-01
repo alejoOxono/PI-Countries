@@ -1,8 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import Countries from './Components/Countries';
 import Country from './Components/Country';
-import Intro from './Components/Intro';
-
+import LandPage from './Components/LandPage';
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
       <Switch>
         <Route
           exact path='/'
-          render={() => <Intro />}
+          render={() => <LandPage />}
         />
 
         <Route

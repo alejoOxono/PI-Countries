@@ -1,5 +1,5 @@
 import { Link  } from 'react-router-dom';
-
+import styles from '../css-module/AllCountries.module.css'
 const AllCountries = ({ el }) => {
 
 
