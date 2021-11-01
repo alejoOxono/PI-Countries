@@ -2,8 +2,7 @@ const { Router } = require("express");
 const server = require("../app");
 const bulkActivityBD = require("../modules/bulkActivityBD");
 const express = require("express");
-const { conn } = require("../db");
-const { Activity } = conn.models;
+const searchActivity = require("../modules/searchActivity");
 
 const router = Router();
 router.use(express.json());
@@ -19,8 +18,9 @@ router.post('/activity', async (req, res) => {
 router.get('/activity', async(req, res, next) => {
     
     try{
-        let control = await Activity.findAll();
-        res.json(control);
+        let { name } = req.query;
+        let resultado = await searchActivity(name);
+        res.json(resultado);
     }
     catch(err){
         next(err);

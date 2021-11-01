@@ -107,10 +107,9 @@ const rootReduce = (state = stateInitial, { type, payload }) => {
 
 
         case SEARCH_COUNTRY_BY_ACTIVITY:
-            let filterByActivities = state.dataBaseCountry.filter((el) => el.activities ? el.activities[0]?.name === payload:[])
             return {
                 ...state,
-                countriesFiltered: filterByActivities
+                countriesFiltered: payload ? payload : state.dataBaseCountry
             }
 
         default:

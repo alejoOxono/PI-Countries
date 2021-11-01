@@ -6,12 +6,13 @@ import styles from '../css-module/Activity.module.css'
 
 const Activity = () => {
     const [activity, setActivity] = useState({
-        country: '',
+        country: [],
         name: '',
         dificulty: '',
         duration: '',
         season: ''
     })
+
     const [countriesSelected, setCountriesSelected] = useState([])
 
     const countries = useSelector((state) => state.dataBaseCountry);
@@ -24,10 +25,31 @@ const Activity = () => {
         })
     }
 
-    const formSubmit = (e) =>{
+    const formSubmit = (e) => {
         console.log(activity)
         e.preventDefault();
         dispatch(addActivity(activity));
+        setCountriesSelected([])
+        setActivity({
+            ...activity,
+            country: [],
+        })
+    }
+
+
+    const handleCountries = (e) => {
+        setCountriesSelected({
+            ...countriesSelected,
+            country: e.target.value
+        })
+    }
+
+    const submitCountries = (e) => {
+        e.preventDefault();
+        setActivity({
+            ...activity,
+            country: [...activity.country, countriesSelected.country]
+        })
     }
 
 
@@ -42,6 +64,26 @@ const Activity = () => {
                         puedes realizar en cualquier país, delacrar su dificultad,
                         temporada en la que se práctica y cuanto tiempo
                         dura su práctica</p>
+
+                    <form onChange={(e) => handleCountries(e)}>
+                        <div>
+                            <label htmlFor="country">Seleccionar Paises: </label>
+                            <input type='text' list='country' name='country' />
+                            <datalist id='country'>
+                                {countries.map((country) =>
+                                    <option value={country.id} />
+                                )}
+                            </datalist>
+                            <button type='submit' onClick={(e)=>submitCountries(e)}>Añadir País</button>
+                        </div>
+                    </form>
+                    <ul>
+                        {activity.country?.map((el)=>{
+                            return <li>{el}</li>
+                        })}
+                    </ul>
+
+
                     <form onChange={(e) => handleForm(e)}>
 
                         <div>
@@ -83,16 +125,6 @@ const Activity = () => {
                             </fieldset>
                         </div>
 
-                        <div>
-                            <label htmlFor="country">Seleccionar Paises: </label>
-                            <input type='text' list='country' name='country' />
-                            <datalist id='country'>
-                                {countries.map((country) =>
-                                    <option value={country.name} />
-                                )}
-                            </datalist>
-                            <button type='button' onClick>Añadir País</button>
-                        </div>
                         <div>
                             <button type='submit' onClick={(e) => formSubmit(e)}>Añadir Actividad</button>
                         </div>

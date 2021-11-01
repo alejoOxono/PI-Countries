@@ -33,8 +33,7 @@ const Filter = ({ paginar, setOrden }) => {
     }
 
     const handlerActivity = (e) => {
-        e.preventDefault();
-        dispatch(searchCountryByActivity(e.target.value));
+        dispatch(searchCountryByActivity((e.target.value).toLowerCase()));
         paginar(1);
         setOrden(`Ordenado ${e.target.value}`)
     }

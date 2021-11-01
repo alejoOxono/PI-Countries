@@ -5,7 +5,7 @@ import Activity from "./Activity";
 const Nav = () => {
     return (
         <nav>
-            <Activity/>
+            <Activity />
         </nav>
 
     )

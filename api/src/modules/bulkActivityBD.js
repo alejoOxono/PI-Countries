@@ -13,15 +13,16 @@ const bulkActivityBD = async (para) => {
         })
 
     }
-
-        let reg = await findActivity({ name: para.name });
-        await reg.addCountry(para.country);
+    let reg = await findActivity({ name: para.name });
+    para.country.forEach(async(el) =>{
+        await reg.addCountry(el)
+    })
 
 
 }
 
 const findActivity = async (act) => {
-    let reg = await Activity.findOne({where: act});
+    let reg = await Activity.findOne({ where: act });
     return reg;
 }
 

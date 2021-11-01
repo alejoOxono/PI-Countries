@@ -79,6 +79,7 @@ export const countrySelected = (id) => {
 
 export const addActivity = (form) => {
     return function(dispatch){
+        console.log(form)
         return axios.post('http://localhost:3001/activity', form)
         .then((data)=>{
             return data
@@ -108,8 +109,20 @@ export const getActivities = () => {
 
 
 export const searchCountryByActivity = (activity) => {
-    return {
-        type: SEARCH_COUNTRY_BY_ACTIVITY,
-        payload: activity
+    return function (dispatch) {
+        return axios.get(`http://localhost:3001/activity?name=${activity}`)
+            .then((data) => {
+                console.log(data.data[0].countries)
+                dispatch({
+                    type: SEARCH_COUNTRY_BY_ACTIVITY,
+                    payload: data.data[0].countries
+                })
+            })
+            .catch((err) => {
+                //dispatch de error
+                console.log(err);
+            })
     }
 }
+
+
