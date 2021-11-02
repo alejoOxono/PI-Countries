@@ -1,8 +1,8 @@
 .all {
   align-items: center;
-  background: white;
+  background: #fdf5f1;
   display: flex;
-  height: 60vh;
+  height: fit-content;
   justify-content: center;
 }
 
@@ -24,16 +24,16 @@
   } 
 }
 .slider {
-  background: white;
+  background: #fdf5f1;
   box-shadow: 0 10px 20px -5px rgba(121, 121, 121, 0.125);
   height: 250px;
   margin: auto;
   overflow: hidden;
   position: relative;
-  width: 1080px;
+  width: 1240px;
 }
 .slider::before, .slider::after {
-  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, #fdf5f1 0%, #fdf5f100 100%);
   content: "";
   height: 250px;
   position: absolute;
@@ -70,4 +70,41 @@
 
 .shieldImg{
   height: 200px;
+}
+
+
+@media(max-width:900px){
+  .slider{
+      width: 900px;
+  }
+}
+
+@media(max-width:800px){
+  .slider{
+      width: 800px;
+  }
+}
+
+@media(max-width:700px){
+  .slider{
+      width: 700px;
+  }
+}
+
+@media(max-width:600px){
+  .slider{
+      width: 600px;
+  }
+}
+
+@media(max-width:500px){
+  .slider{
+      width: 500px;
+  }
+}
+
+@media(max-width:400px){
+  .slider{
+      width: 400px;
+  }
 }

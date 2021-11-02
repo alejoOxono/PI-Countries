@@ -2,6 +2,7 @@
 const Footer = () =>{
     return(
         <>
+        footer
         </>
     )
 }

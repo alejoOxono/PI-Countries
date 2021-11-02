@@ -1,5 +1,6 @@
 .all{
     display: flex;
+    
 }
 
 .contFig{
@@ -8,5 +9,11 @@
 }
 
 .contFig img{
-    height: 100px;
+    height: 120px;
+}
+
+.links{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }

@@ -9,19 +9,19 @@ const Nav = () => {
             <figure className={styles.contFig}>
                 <img src={logo} alt="hola" />
             </figure>
+            <div className={styles.links}>
 
-            <div>
-                <Activity />
-            </div>
+                <div>
+                    HOME
+                </div>
+                
+                <div>
+                    <Activity />
+                </div>
 
-            <div>
-                HOME
-            </div>
-            
-            <div>
-                SEARCH AND FILTER
             </div>
         </nav>
+
 
     )
 }

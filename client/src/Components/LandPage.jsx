@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { getCountries } from '../actions/actionsCreator'
-import styles from '../css-module/Intro.module.css'
+import styles from '../css-module/LandPage.module.css'
 
 
 const LandPage = () => {
@@ -16,7 +16,7 @@ const LandPage = () => {
     return (
         <div className={styles.gridContainer}>
             <Link to='/countries'>
-                <button>Comenzar</button>
+                <button type='button'>Comenzar</button>
             </Link>
         </div>
     )

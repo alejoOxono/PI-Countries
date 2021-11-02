@@ -35,11 +35,11 @@ const Countries = () => {
     const bodyIter = () => {
         if (body >= 9) {
             body = 1;
-            return 'styles.body1'
+            return 'Body1'
         }
         else {
             body++;
-            return `styles.body${body}`
+            return `Body${body}`
         }
     }
 
@@ -60,6 +60,8 @@ const Countries = () => {
                 <Filter paginar={paginar} setOrden={setOrden} />
                 <Search setOrden={setOrden}/>
             </div>
+            
+            <div className='Body'></div>
 
             {currentCountriesShow.map((el) => {
                 return (
