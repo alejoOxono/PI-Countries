@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 80%;
     height: 70%;
-    margin: 22% -12% 0 30%;
     border: 5px #2f4858 solid;
     padding: 10%;
     border-radius: 10%;
@@ -27,3 +26,4 @@
 .info h4{
     margin: 3px 0 3px 0;
 }
+

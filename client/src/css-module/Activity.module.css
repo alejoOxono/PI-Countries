@@ -14,8 +14,9 @@ a:hover{
 .modalContenido{
     background-color:white;
     width:700px;
+    height: 500px;
     padding: 10px 20px;
-    margin: 10% auto;
+    margin: 2% auto;
     position: relative;
 }
 

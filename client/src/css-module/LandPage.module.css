@@ -1,4 +1,5 @@
 .gridContainer{
   background-image: url('../assets/countries.png');
   height: 100vh;
+  background-size: 100% 100%;
 }

@@ -7,7 +7,7 @@ const Nav = () => {
     return (
         <nav className={styles.all}>
             <figure className={styles.contFig}>
-                <img src={logo} alt="hola" />
+                <Link to='/'> <img src={logo} alt="hola" /> </Link>
             </figure>
             <div className={styles.links}>
 

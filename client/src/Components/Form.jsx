@@ -1,38 +1,45 @@
 import { useSelector } from "react-redux";
-
+import styles from '../css-module/Form.module.css'
 
 const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubmit }) => {
     const countries = useSelector((state) => state.dataBaseCountry);
 
     return (
-        <>
-            <form onChange={(e) => handleCountries(e)}>
-                <div>
-                    <label htmlFor="country">Seleccionar Paises: </label>
-                    <input type='text' list='country' name='country' />
-                    <datalist id='country'>
-                        {countries.map((country) =>
-                            <option value={country.id} />
-                        )}
-                    </datalist>
-                    <button type='submit' onClick={(e) => submitCountries(e)}>Añadir País</button>
+        <div className={styles.gridContainer}>
+
+            <div className={styles.countries}>
+                <div className={styles.seleccion}>
+                    <form onChange={(e) => handleCountries(e)}>
+                        <label htmlFor="country">Seleccionar Paises: </label>
+                        <input type='text' list='country' name='country' />
+                        <datalist id='country'>
+                            {countries.map((country) =>
+                                <option value={country.id} />
+                            )}
+                        </datalist>
+                        <button type='submit' onClick={(e) => submitCountries(e)}>Añadir</button>
+                    </form>
                 </div>
-            </form>
-            <ul>
-                {activity.country?.map((el) => {
-                    return <li>{el}</li>
-                })}
-            </ul>
+
+                <div className={styles.agregados}>
+                    <ul>
+                        {activity.country?.map((el) => {
+                            return <span>{el} + </span>
+                        })}
+                    </ul>
+                </div>
+            </div>
 
 
             <form onChange={(e) => handleForm(e)}>
 
-                <div>
+                <div className={styles.actividad}>
+
                     <label htmlFor="name">Nombre de actividad: </label>
                     <input type='text' placeholder='Actividad...' name='name' />
                 </div>
 
-                <div>
+                <div className={styles.dificultad}>
                     <fieldset>
                         <legend>Dificultad</legend>
                         <label htmlFor="dificulty">1</label>
@@ -47,12 +54,13 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                         <input type='radio' name='dificulty' value='5' />
                     </fieldset>
                 </div>
-                <div>
+
+                <div className={styles.duracion}>
                     <label htmlFor="duration">Duración de actividad: </label>
                     <input type='text' placeholder='Duración en Horas...' name='duration' />
                 </div>
 
-                <div>
+                <div className={styles.temporada}>
                     <fieldset>
                         <legend>Temporada</legend>
                         <label htmlFor="season">Verano</label>
@@ -66,12 +74,12 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                     </fieldset>
                 </div>
 
-                <div>
+                <div className={styles.submit}>
                     <button type='submit' onClick={(e) => formSubmit(e)}>Añadir Actividad</button>
                 </div>
 
             </form>
-        </>
+        </div>
     )
 }
 

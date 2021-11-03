@@ -2,17 +2,9 @@
   display: grid;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   grid-template-columns: 0.4fr 1fr 1fr 1fr 0.4fr;
-  grid-template-rows: 0.3fr 0.60fr 1fr 1fr 1fr 1fr 0.5fr 0.1fr;
+  grid-template-rows: 0.3fr 0.70fr 1fr 1fr 1fr 1fr 0.5fr 0.1fr;
   gap: 0px 0px;
-  grid-template-areas:
-    "Nav Nav Nav Nav Nav"
-    "Imagenes Imagenes Imagenes Imagenes Imagenes"
-    "nada Search Search Search nada2"
-    "nada Body1 Body2 Body3 nada2"
-    "nada Body4 Body5 Body6 nada2"
-    "nada Body7 Body8 Body9 nada2"
-    "Paginacion Paginacion Paginacion Paginacion Paginacion"
-    "Footer Footer Footer Footer Footer";
+
 }
 
 .Nav { grid-area: 1 / 1 / 2 / 6; }
@@ -43,13 +35,12 @@
 
 .Search { grid-area: 3 / 2 / 4 / 5; }
 
-.Content { grid-area: 3 / 2 / 7 / 5; }
-
 .Paginacion { grid-area: 7 / 2 / 8 / 5; }
 
 .nada { grid-area: 3 / 1 / 8 / 2; }
 
 .nada2 { grid-area: 3 / 5 / 8 / 6; }
+
 
 
 .Nav{
@@ -80,7 +71,7 @@
   display: flex;
   width: 266px;
   height: 409px;
-  justify-content:flex-end;
+  padding: 20px 0 0 20px;
 }
 
 .nada,.nada2{
@@ -105,8 +96,47 @@
   display: flex;
 }
 
-@media(max-width:500px){
+@media(max-width:1100px){
+
+  .Body1, .Body2, .Body3, .Body4, .Body5, .Body6, .Body7, .Body8, .Body9{
+
+    padding: 10px 10px 0 0;
+  }
+
+}
+
+
+@media(max-width:800px){
+  
   .nada,.nada2{
     display: none;
   }
+
+}
+@media(max-width:550px){
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 0.70fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr 0.1fr;
+  
+  }
+  .Nav { grid-area: 1 / 1 / 2 / 2; }
+  .Imagenes { grid-area: 2 / 1 / 3 / 2; }
+  .Search { grid-area: 3 / 1 / 4 / 2; }
+  .Body { grid-area: 4 / 1 / 13 / 2; }
+  .Body1 { grid-area: 4 / 1 / 5 / 2; }
+  .Body2 { grid-area: 5 / 1 / 6 / 2; }
+  .Body3 { grid-area: 6 / 1 / 7 / 2; }
+  .Body4 { grid-area: 7 / 1 / 8 / 2; }
+  .Body5 { grid-area: 8 / 1 / 9 / 2; }
+  .Body6 { grid-area: 9 / 1 / 10 / 2; }
+  .Body7 { grid-area: 10 / 1 / 11 / 2; }
+  .Body8 { grid-area: 11 / 1 / 12 / 2; }
+  .Body9 { grid-area: 12 / 1 / 13 / 2; }
+  .Paginacion { grid-area: 13 / 1 / 14 / 2; }
+  .Footer { grid-area: 14 / 1 / 15 / 2; }
+
+  
+  
 }

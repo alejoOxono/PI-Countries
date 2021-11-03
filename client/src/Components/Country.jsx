@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import { countrySelected } from '../actions/actionsCreator';
 import styles from '../css-module/Country.module.css';
 import Nav from './Nav';
+import Footer from './Footer';
 
 
 const Country = () => {
@@ -22,38 +23,69 @@ const Country = () => {
             <div className={styles.Nav}>
                 <Nav />
             </div>
+
+            <div className={styles.Map} >
+                <h2>Mapa</h2>
+
+                <figure className={styles.contMap}>
+                    <img src={country.map} alt='MAP NOT FOUND' />
+                </figure>
+
+            </div>
+
+            <div className={styles.Simbolos}>
+                <h2>Símbolos Patrios</h2>
+
+                <div className={styles.figures}>
+                    <figure className={styles.contFlag}>
+                        <img src={country.flag} alt="bandera" />
+                    </figure>
+
+                    <figure className={styles.contShield}>
+                        <img src={country.shield} alt="escudo" />
+                    </figure>
+                </div>
+
+            </div>
+
+            <div className={styles.Info}>
+                <div className={styles.country}>
+                    <h2>{country.name}</h2>
+                    <p><b>Continente: </b> {country.continent}</p>
+                    <p><b>Región: </b> {country.region}</p>
+                    <p><b>Capital: </b> {country.capital}</p>
+                    <p><b>Area: </b> {country.area}</p>
+                    <p><b>Población: </b> {country.population}</p>
+                    <p><a href={country.info} target='_blank'>Información Adicional</a></p>
+
+                </div>
+
+            </div>
+
+            <div className={styles.Activity}>
+                <div className={styles.activities}>
+                    <h2>Actividades</h2>
+                    {country.activities?.map((activity) => {
+                        return <>
+                            <ul>
+                                <u><b>{activity.name}</b></u>
+                                <li><b>Dificultad: </b>{activity.dificulty}</li>
+                                <li><b>Duración: </b>{activity.duration} Horas</li>
+                                <li><b>Temporada: </b>{activity.season}</li>
+                            </ul>
+                        </>
+                    })}
+                </div>
+            </div>
+
+
             <div className={styles.nada}></div>
             <div className={styles.nada2}></div>
             <div className={styles.nada3}></div>
-            <div claclassNamess={styles.Map}>
-                <img src={country.map} alt='MAP NOT FOUND' />
-            </div>
-            <div className={styles.Info}>
-                my info
-                <h2>Actividades</h2>
-                {country.activities?.map((activity) => {
-                    return <>
-                        <ul>
-                            <p>{activity.name}</p>
-                            <li>{activity.dificulty}</li>
-                            <li>{activity.duration}</li>
-                            <li>{activity.season}</li>
-                        </ul>
-                    </>
-                })}
-            </div>
-            <div className={styles.Simbolos}></div>
-
-            <figure>
-                <img src={country.flag} alt="bandera" />
-            </figure>
-
-            <figure>
-                <img src={country.shield} alt="escudo" />
-            </figure>
-
+            <div className={styles.Contenido}></div>
             <div className={styles.nada4}></div>
-            <div className={styles.Footer}></div>
+
+
         </div>
     )
 }
