@@ -56,13 +56,13 @@ const Activity = () => {
 
     return (
         <>
-            <a className={styles.linkActivity} href="#activity">Crear Actividad</a>
+            <a className={styles.linkActivity} href="#activity">Actividades</a>
             <div id='activity' className={styles.modal}>
                 <div className={styles.modalContenido}>
                     <a href="#">X</a>
                     <h1>Crear Actividad</h1>
                     <p>Con esta forma podrás indicar que actividades turísticas o de interés
-                        se puede realizar en algún país y detallar ciertas características</p>
+                        se pueden realizar en algún país y detallar ciertas características</p>
 
                     <Form activity={activity} handleCountries={ handleCountries} 
                     submitCountries={submitCountries} handleForm={handleForm} formSubmit={formSubmit} />

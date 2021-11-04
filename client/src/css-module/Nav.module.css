@@ -6,14 +6,144 @@
 .contFig{
     margin: 0;
     margin-left: 5%;
+    width: 180px;
+    height: 125;
 }
 
 .contFig img{
     height: 120px;
 }
 
+
 .links{
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content:space-around;
+}
+
+.home{
+    width: 250px;
+    height: 100%;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.home p{
+    text-decoration: none;
+    text-decoration-line: none;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+    padding-bottom: 15px;
+    padding-right: -15px;
+    border-bottom: 2px #582626 solid;
+    font-family: serif;
+    font-weight: bold;
+    font-size: medium;
+    color: #582626;
+}
+
+.activity{
+    width: 250px;
+}
+
+.adicion{
+    display: flex;
+    height: 100%;
+    width: 100%; 
+    background-color: #582626;
+    clip-path: ellipse(100% 99% at 100% 100%);
+}
+
+@media(max-width:700px) {
+    .adicion{
+        display: none;
+    }
+}
+
+
+.adicion2{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    clip-path: ellipse(100% 75% at 100% 100%);
+
+}
+
+
+.adicion3{
+    height: 100%;
+    width: 100%;
+    background-color: #062331;
+    clip-path: ellipse(100% 50% at 100% 100%);
+}
+
+
+.adicion4{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    clip-path: ellipse(100% 25% at 100% 100%);
+}
+
+
+
+@media(max-width:700px) {
+
+    .home{
+        width: 200px;
+        height: 100%;
+    }
+
+    .activity{
+        width: 200px;
+    }
+}
+
+@media(max-width:550px) {
+
+    .home{
+        width: 100px;
+        height: 100%;
+    }
+
+    .activity{
+        width: 100px;
+    }
+
+    .contFig{
+        margin: 0;
+        width: 100px;
+        height: 125;
+    }
+
+    .contFig img{
+        max-width: 100px;
+        height: 120px;
+    }
+    
+}
+
+@media(max-width:450px) {
+
+    .home{
+        width: 60px;
+        height: 100%;
+        padding: 0;
+        margin-left: -20px;
+    }
+
+    .activity{
+        width: 80px;
+        padding: 0;
+        margin-left: -40px;
+    }
+
+    .contFig{
+        margin: 0;
+        width: 75px;
+        height: 125;
+    }
+
+
 }

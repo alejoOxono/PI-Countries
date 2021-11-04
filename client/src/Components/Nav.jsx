@@ -11,12 +11,22 @@ const Nav = () => {
             </figure>
             <div className={styles.links}>
 
-                <div>
-                    HOME
+                <div className={styles.home}>
+                    <Link activeClassName="current" to='/countries'>
+                        <p style={{textDecoration:'none'}}>Home</p>
+                    </Link>
                 </div>
-                
-                <div>
+
+                <div className={styles.activity}>
                     <Activity />
+                </div>
+
+                <div className={styles.adicion}>
+                    <div className={styles.adicion2}>
+                        <div className={styles.adicion3}>
+                            <div className={styles.adicion4}></div>
+                        </div>
+                    </div>
                 </div>
 
             </div>

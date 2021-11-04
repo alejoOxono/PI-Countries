@@ -12,7 +12,8 @@ a:hover{
 }
 
 .modalContenido{
-    background-color:white;
+    background-image: url('../assets/WorldMap.svg');
+    background-color: azure;
     width:700px;
     height: 500px;
     padding: 10px 20px;
@@ -37,4 +38,31 @@ a:hover{
 .modal:target{
     opacity:1;
     pointer-events:auto;
+}
+
+.modalContenido p{
+    background-color: azure;
+}
+
+.linkActivity{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+    padding-bottom: 15px;
+    border-bottom: 2px #582626 solid;
+    padding-left: 15px;
+    font-family: serif;
+    font-weight: bold;
+    font-size:medium;
+    color: #582626;
+
+}
+
+@media(max-width:550px){
+    
+    .modalContenido{
+        width: 380px;
+        height: 700px;
+    }
+
 }

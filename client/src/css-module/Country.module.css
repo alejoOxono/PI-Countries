@@ -43,12 +43,19 @@
 .Info{
   display: flex;
   padding: 10px;
+  justify-content: center;
 }
 
 .Simbolos{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.Activity{
+  display: flex;
+  padding: 10px;
+  justify-content: center;
 }
 
 .nada, .nada4{
@@ -120,7 +127,52 @@
 }
 
 @media(max-width:700px) {
-  .nada, .nada2, .nada3, .nada4{
+  .nada2, .nada3{
     display: none;
   }
+
+  :root{
+    padding: 0;
+    margin: 0;
+  }
+
+  .contMap img{
+    max-width: 200px;
+  }
+  
+  .contFlag img{
+    max-width: 100px;
+  }
+  
+  .contShield img{
+    max-width: 125px;
+  }
+
+}
+
+@media(max-width:550px){
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.115fr 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+    gap: 0px 0px;
+  }
+  
+  .Nav { grid-area: 1 / 1 / 2 / 2; }
+  
+  .nada { grid-area: 2 / 1 / 3 / 2; }
+  
+  .Info { grid-area: 3 / 1 / 4 / 2; }
+  
+  .Map { grid-area: 4 / 1 / 5 / 2; }
+  
+  .Simbolos { grid-area: 5 / 1 / 6 / 2; }
+  
+  .Activity { grid-area: 6 / 1 / 7 / 2; }
+  
+  .nada4 { grid-area: 7 / 1 / 8 / 2; }
+  
+  .Contenido { grid-area: 3 / 1 / 7 / 2; }
+  
+  
 }

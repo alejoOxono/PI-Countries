@@ -1,3 +1,60 @@
-.agregados{
+label{
+    background-color: azure;
+    padding: 5px;
+}
+
+.gridContainer{
+    padding: 5px;
+}
+
+.countries{
+    margin-bottom: 4px;
+}
+
+.seleccion input{
+    width: 60%;
+}
+
+.form{
     display: flex;
+}
+
+.form form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.actividad{
+    display: flex;
+    margin-bottom: 4px;
+}
+
+.actividad input{
+    width: 30.7%;
+}
+
+.dificultad{
+    display: flex;
+    margin-bottom: 4px;
+}
+
+.duracion{
+    display: flex;
+    margin-bottom: 4px;
+}
+
+.temporada{
+    display: flex;
+    margin-bottom: 4px; 
+}
+
+.submit{
+    display: flex;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+@media(max-width:550px){
+    
 }
