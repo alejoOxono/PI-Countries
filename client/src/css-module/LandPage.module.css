@@ -1,5 +1,353 @@
-.gridContainer{
+.gridContainer {
+  display: grid;
+  grid-template-columns: 0.01fr 1fr 0.01fr;
+  grid-template-rows: 0.01fr 1fr 0.01fr;
+  gap: 0px 0px;
+  background-image: url('../assets/Hexagon.svg');
+  color:#8d7257;
+}
+.nada { grid-area: 1 / 1 / 2 / 4; }
+.nada2 { grid-area: 3 / 1 / 4 / 4; }
+.nada3 { grid-area: 2 / 1 / 3 / 2; }
+.nada4 { grid-area: 2 / 3 / 3 / 4; }
+.back { grid-area: 2 / 2 / 3 / 3; }
+.contenido { grid-area: 1 / 1 / 4 / 4; }
+
+.back{
   background-image: url('../assets/countries.png');
   height: 100vh;
-  background-size: 100% 100%;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+
+.back:hover{
+  background-image: url('../assets/countries.png');
+  height: 100vh;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 5s;
+  transition-delay: 3s;
+  opacity: 100;
+  z-index: 3;
+}
+
+
+
+
+@media(max-width:700px){
+
+  .gridContainer{
+    background-image: url('../assets/countriesEuropa.png');
+    height: 100vh;
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media(max-width:500px){
+  .gridContainer{
+    background-image: url('../assets/countriesAmerica.png');
+    height: 100vh;
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+
+/* Animations */
+
+#container {
+  overflow: hidden;
+}
+
+/* Animations  TEXT1*/
+
+
+.text {
+  /* animation properties */
+  -moz-transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  
+  -moz-animation: my-animation 9s linear infinite;
+  -webkit-animation: my-animation 9s linear infinite;
+  animation: my-animation 9s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(0%); }
+  to { -moz-transform: translateX(100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(0%); }
+  to { -webkit-transform: translateX(100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  to {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+/* Animations  TEXT2*/
+
+
+.textDos {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -moz-animation: my-animationdos 15s linear infinite;
+  -webkit-animation: my-animationdos 15s linear infinite;
+  animation: my-animationdos 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animationdos {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animationdos {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animationdos {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+/* Animations  TEXT3*/
+
+
+.textTres {
+  /* animation properties */
+  -moz-transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  
+  -moz-animation: my-animationtres 13s linear infinite;
+  -webkit-animation: my-animationtres 13s linear infinite;
+  animation: my-animationtres 13s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animationtres {
+  from { -moz-transform: translateX(50%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animationtres {
+  from { -webkit-transform: translateX(50%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animationtres {
+  from {
+    -moz-transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+/* Animations  TEXT4*/
+
+.textCuatro {
+  /* animation properties */
+  -moz-transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  
+  -moz-animation: my-animationcuatro 20s linear infinite;
+  -webkit-animation: my-animationcuatro 20s linear infinite;
+  animation: my-animationcuatro 20s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animationcuatro {
+  from { -moz-transform: translateX(50%); }
+  to { -moz-transform: translateX(100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animationcuatro {
+  from { -webkit-transform: translateX(50%); }
+  to { -webkit-transform: translateX(100%); }
+}
+
+@keyframes my-animationcuatro {
+  from {
+    -moz-transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  to {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+/* Animations  TEXT5*/
+
+
+.textCinco {
+  /* animation properties */
+  -moz-transform: translateX(20%);
+  -webkit-transform: translateX(20%);
+  transform: translateX(20%);
+  
+  -moz-animation: my-animationcinco 10s linear infinite;
+  -webkit-animation: my-animationcinco 10s linear infinite;
+  animation: my-animationcinco 10s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animationcinco {
+  from { -moz-transform: translateX(20%); }
+  to { -moz-transform: translateX(80%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animationcinco {
+  from { -webkit-transform: translateX(20%); }
+  to { -webkit-transform: translateX(80%); }
+}
+
+@keyframes my-animationcinco {
+  from {
+    -moz-transform: translateX(20%);
+    -webkit-transform: translateX(20%);
+    transform: translateX(20%);
+  }
+  to {
+    -moz-transform: translateX(80%);
+    -webkit-transform: translateX(80%);
+    transform: translateX(80%);
+  }
+}
+
+/* Animations  TEXT6*/
+
+
+.textSeis {
+  /* animation properties */
+  -moz-transform: translateX(80%);
+  -webkit-transform: translateX(80%);
+  transform: translateX(80%);
+  
+  -moz-animation: my-animationseis 10s linear infinite;
+  -webkit-animation: my-animationseis 10s linear infinite;
+  animation: my-animationseis 10s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animationseis {
+  from { -moz-transform: translateX(80%); }
+  to { -moz-transform: translateX(20%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animationseis {
+  from { -webkit-transform: translateX(80%); }
+  to { -webkit-transform: translateX(20%); }
+}
+
+@keyframes my-animationseis {
+  from {
+    -moz-transform: translateX(80%);
+    -webkit-transform: translateX(80%);
+    transform: translateX(80%);
+  }
+  to {
+    -moz-transform: translateX(20%);
+    -webkit-transform: translateX(20%);
+    transform: translateX(20%);
+  }
+}
+
+
+#uno{
+  font-size: large;
+}
+
+#dos{
+  font-size: x-large;
+}
+
+#tres{
+  font-size: medium;
+}
+
+#cuatro{
+  font-size: xx-large;
+}
+
+#cinco{
+  font-size: smaller;
+}
+
+#seis{
+  font-size: 5em;
+}
+
+
+
+#container {
+  -moz-animation: cssAnimation 0s ease-in 10s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 10s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 10s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 10s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      overflow:hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      visibility:hidden;
+  }
 }

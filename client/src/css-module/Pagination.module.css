@@ -1,0 +1,15 @@
+.listaPag{
+    display: flex;
+    list-style: none;
+}
+
+.listaPag li{
+    padding: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.listaPag li.active{
+    background-color: black;
+    color: white;
+}
