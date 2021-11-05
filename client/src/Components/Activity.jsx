@@ -3,9 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addActivity } from '../actions/actionsCreator'
 import styles from '../css-module/Activity.module.css'
 import Form from './Form'
+import { useHistory } from 'react-router-dom'
 
 
 const Activity = () => {
+    const history = useHistory();
+
     const [activity, setActivity] = useState({
         country: [],
         name: '',
@@ -27,14 +30,14 @@ const Activity = () => {
     }
 
     const formSubmit = (e) => {
-        console.log(activity)
         e.preventDefault();
         dispatch(addActivity(activity));
         setCountriesSelected([])
         setActivity({
             ...activity,
-            country: [],
+
         })
+        history.goBack()
     }
 
 
@@ -64,8 +67,8 @@ const Activity = () => {
                     <p>Con esta forma podrás indicar que actividades de interés
                         se pueden realizar en algún país y detallarles ciertas características</p>
 
-                    <Form activity={activity} handleCountries={ handleCountries} 
-                    submitCountries={submitCountries} handleForm={handleForm} formSubmit={formSubmit} />
+                    <Form activity={activity} handleCountries={handleCountries}
+                        submitCountries={submitCountries} handleForm={handleForm} formSubmit={formSubmit} />
                 </div>
             </div>
         </>

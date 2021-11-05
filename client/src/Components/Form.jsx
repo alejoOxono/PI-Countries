@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import styles from '../css-module/Form.module.css'
 
@@ -8,6 +7,11 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
     const reg = new RegExp('^[0-9]+$');
     const regEx = new RegExp(/^[A-Za-z]+$/);
     
+    const pushCountries = (country) => {
+        console.log(typeof country);
+        if(regEx.test(country)) return null
+        else return 'Introducir País'
+    }
 
     return (
         <div className={styles.gridContainer}>
@@ -25,7 +29,7 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                         <button type='submit' onClick={(e) => submitCountries(e)}>Añadir</button>
                     </form>
                 </div>
-                <div className={styles.warning}><p>{regEx.test(activity.country) ? null:'Introducir País'}</p></div>
+                <div className={styles.warning}><p>{pushCountries(activity.country)}</p></div>
                 <div className={styles.agregados}>
                     <ul>
                         {activity.country?.map((el) => {

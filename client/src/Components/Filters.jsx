@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterCountriesByContinent, filterCountriesOrdName, filterCountriesOrdPopulation, getActivities, searchCountry, searchCountryByActivity } from "../actions/actionsCreator";
 import styles from '../css-module/Filters.module.css'
 
 const Filter = ({ paginar, setOrden }) => {
-    const filtrados = useSelector((state) => state.countriesFiltered);
+    const [activity, setActivity] = useState('')
     const activities = useSelector((state) => state.dataBaseActivities);
     const dispatch = useDispatch();
 
@@ -39,7 +39,12 @@ const Filter = ({ paginar, setOrden }) => {
     }
 
     const handlerActivity = (e) => {
-        dispatch(searchCountryByActivity((e.target.value).toLowerCase()));
+        setActivity((e.target.value).toLowerCase())
+    }
+
+    const searchActivity = (e) => {
+        e.preventDefault();
+        dispatch(searchCountryByActivity(activity));
         paginar(1);
         setOrden(`Ordenado ${e.target.value}`)
     }
@@ -91,10 +96,11 @@ const Filter = ({ paginar, setOrden }) => {
                                 return <option value={el.name} />
                             })}
                         </datalist>
+                        <button type='button' className={styles.butActivities} onClick={(e) => searchActivity(e)}>Buscar</button>
                     </fieldset>
                 </div>
             </div>
-            
+
             <div className={styles.search}>
                 <input type='text' placeholder='Busqueda por País ...' onChange={(e) => searchByCountry(e)} />
             </div>
