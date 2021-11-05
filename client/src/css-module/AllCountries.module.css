@@ -8,6 +8,14 @@
     border-radius: 10%;
 }
 
+.all p{
+    color:#582626;
+}
+
+.all p:hover{
+    color:#5826267c;
+}
+
 .cuadro{
     width: 146.1px;
 }

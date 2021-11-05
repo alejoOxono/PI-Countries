@@ -5,7 +5,6 @@ import { getCountries } from '../actions/actionsCreator';
 import Carousel from './Carousel';
 import Nav from './Nav';
 import AllCountries from './AllCountries';
-import Search from './Search';
 import Footer from './Footer';
 import Pagination from './Pagination';
 import Filter from './Filters';
@@ -56,9 +55,8 @@ const Countries = () => {
 
             <div className="nada"></div>
 
-            <div className='Search'  style={{display:''}}>
+            <div className='Search' >
                 <Filter paginar={paginar} setOrden={setOrden} />
-                <Search setOrden={setOrden}/>
             </div>
             
             <div className='Body'></div>

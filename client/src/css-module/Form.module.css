@@ -55,6 +55,22 @@ label{
     justify-content: center;
 }
 
+.agregados{
+    height: 15px;
+    margin: 0;
+}
+
+.warning{
+    margin: 0;
+}
+
+.warning p{
+    margin: 0 !important;
+    font-size: xx-small;
+    color: #581515;
+    width: fit-content;
+}
+
 @media(max-width:550px){
     
 }

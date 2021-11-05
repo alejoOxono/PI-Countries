@@ -2,7 +2,7 @@
   display: grid;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   grid-template-columns: 0.4fr 1fr 1fr 1fr 0.4fr;
-  grid-template-rows: 0.3fr 0.70fr 1fr 1fr 1fr 1fr 0.5fr 0.1fr;
+  grid-template-rows: 0.3fr 0.7fr 0.65fr 1fr 1fr 1fr 0.2fr 0.1fr;
   gap: 0px 0px;
 
 }
@@ -87,6 +87,7 @@
 .Search{
   background-color: #2f4858;
   color: white;
+  display: flex;
 }
 
 .Imagenes{

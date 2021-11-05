@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import styles from '../css-module/Form.module.css'
 
 const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubmit }) => {
     const countries = useSelector((state) => state.dataBaseCountry);
+
+    const reg = new RegExp('^[0-9]+$');
+    const regEx = new RegExp(/^[A-Za-z]+$/);
+    
 
     return (
         <div className={styles.gridContainer}>
@@ -11,7 +16,7 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                 <div className={styles.seleccion}>
                     <form onChange={(e) => handleCountries(e)}>
                         <label htmlFor="country">Seleccionar Paises: </label>
-                        <input type='text' list='country' name='country' />
+                        <input required type='text' list='country' name='country' />
                         <datalist id='country'>
                             {countries.map((country) =>
                                 <option value={country.id} />
@@ -20,7 +25,7 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                         <button type='submit' onClick={(e) => submitCountries(e)}>Añadir</button>
                     </form>
                 </div>
-
+                <div className={styles.warning}><p>{regEx.test(activity.country) ? null:'Introducir País'}</p></div>
                 <div className={styles.agregados}>
                     <ul>
                         {activity.country?.map((el) => {
@@ -34,15 +39,17 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                 <form onChange={(e) => handleForm(e)}>
 
                     <div className={styles.actividad}>
-
                         <label htmlFor="name">Nombre de actividad: </label>
-                        <input type='text' placeholder='Actividad...' name='name' />
+                        <input required type='text' placeholder='Actividad...' name='name' />
                     </div>
+                    <div className={styles.warning}><p>{regEx.test(activity.name) ? null:'Introducir nombre de actividad'}</p></div>
+
 
                     <div className={styles.duracion}>
                         <label htmlFor="duration">Duración de actividad: </label>
                         <input type='text' placeholder='Duración en Horas...' name='duration' />
                     </div>
+                    <div className={styles.warning}><p>{ reg.test(activity.duration) ? null:'Introducir duración de actividad en cantidad de horas'}</p></div>
 
                     <div className={styles.dificultad}>
                         <fieldset>
@@ -59,6 +66,7 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                             <input type='radio' name='dificulty' value='5' />
                         </fieldset>
                     </div>
+                    <div className={styles.warning}><p>{activity.dificulty ? null:'Introducir Dificultad'}</p></div>
 
                     <div className={styles.temporada}>
                         <fieldset>
@@ -73,6 +81,7 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                             <input type='radio' name='season' value='primavera' />
                         </fieldset>
                     </div>
+                    <div className={styles.warning}><p>{activity.season ? null:'Introducir Temporada'}</p></div>
 
                     <div className={styles.submit}>
                         <button type='submit' onClick={(e) => formSubmit(e)}>Añadir Actividad</button>

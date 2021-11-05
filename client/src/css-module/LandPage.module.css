@@ -1,3 +1,4 @@
+
 .gridContainer {
   display: grid;
   grid-template-columns: 0.01fr 1fr 0.01fr;
@@ -13,15 +14,23 @@
 .back { grid-area: 2 / 2 / 3 / 3; }
 .contenido { grid-area: 1 / 1 / 4 / 4; }
 
-.back{
-  background-image: url('../assets/countries.png');
+
+.back {
+  opacity: 0;
   height: 100vh;
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0;
+  -moz-animation: cssAnimationBack 0s ease-in 7s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimationBack 0s ease-in 7s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimationBack 0s ease-in 7s forwards;
+  /* Opera */
+  animation: cssAnimationBack 0s ease-in 7s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
-
 
 .back:hover{
   background-image: url('../assets/countries.png');
@@ -33,38 +42,38 @@
   transition-delay: 3s;
   opacity: 100;
   z-index: 3;
-}
+} 
 
 
-
-
-@media(max-width:700px){
-
-  .gridContainer{
-    background-image: url('../assets/countriesEuropa.png');
+@keyframes cssAnimationBack {
+  to {
+    background-image: url('../assets/countries.png');
     height: 100vh;
     background-size: 80% 80%;
     background-position: center;
     background-repeat: no-repeat;
+    transition: 10s;
+    opacity: 100;
+    z-index: 3;
   }
 }
-
-@media(max-width:500px){
-  .gridContainer{
-    background-image: url('../assets/countriesAmerica.png');
+@-webkit-keyframes cssAnimationBack {
+  to {
+    background-image: url('../assets/countries.png');
     height: 100vh;
     background-size: 80% 80%;
     background-position: center;
     background-repeat: no-repeat;
+    transition: 10s;
+    opacity: 100;
+    z-index: 3;
   }
 }
+
 
 
 /* Animations */
 
-#container {
-  overflow: hidden;
-}
 
 /* Animations  TEXT1*/
 
@@ -327,16 +336,18 @@
 
 
 #container {
-  -moz-animation: cssAnimation 0s ease-in 10s forwards;
+  -moz-animation: cssAnimation 0s ease-in 10.01s forwards;
   /* Firefox */
-  -webkit-animation: cssAnimation 0s ease-in 10s forwards;
+  -webkit-animation: cssAnimation 0s ease-in 10.01s forwards;
   /* Safari and Chrome */
-  -o-animation: cssAnimation 0s ease-in 10s forwards;
+  -o-animation: cssAnimation 0s ease-in 10.01s forwards;
   /* Opera */
-  animation: cssAnimation 0s ease-in 10s forwards;
+  animation: cssAnimation 0s ease-in 10.01s forwards;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+
+
 @keyframes cssAnimation {
   to {
       width:0;
@@ -349,5 +360,24 @@
       width:0;
       height:0;
       visibility:hidden;
+  }
+}
+
+
+.but{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 160px;
+  bottom: 80px;
+}
+
+
+
+@media(max-width:550px){
+  .but{
+    right: 0;
   }
 }

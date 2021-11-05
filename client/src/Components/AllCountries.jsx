@@ -6,7 +6,7 @@ const AllCountries = ({ el }) => {
     return (
         <div className={styles.all}>
             <Link to={`/countries/${el.id}`}>
-                <p>{el.name}</p>
+                <p style={{textAlign:'center'}}><b>{el.name}</b></p>
             </Link>
 
             <figure className={styles.cuadro}>

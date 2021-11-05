@@ -1,0 +1,108 @@
+.all{
+    padding: 5px;
+}
+
+.filaUno{
+    display: flex;
+}
+
+.continents{
+    padding:  25px 5px 25px 25px;
+    width: 50%;
+    height: fit-content;
+}
+
+.firstPart button{
+    padding: 10px;
+    width: 100px;
+    background-color: transparent;
+    border:1px black solid;
+    color: white;
+    margin:4px
+}
+
+.secondPart button{
+    padding: 10px;
+    width: 100px;
+    background-color: transparent;
+    border:1px black solid;
+    color: white;
+    margin:4px
+}
+
+.ordenamiento{
+    padding-top: 25px;
+    width: 35%;
+    height: 80px;
+}
+
+.ordenamiento fieldset{
+    height: 100%;
+}
+
+.ordenamiento fieldset select{
+    width: 80%;
+}
+
+.actividades{
+    display: inline-block;
+    padding-top: 25px;
+    height: 80px;
+}
+
+.actividades fieldset{
+    height: 100%;
+}
+
+.search{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.search input{
+    display: flex;
+    width: 75%;
+    margin-top: 10px;
+}
+
+
+
+.firstPart button:hover{
+    background-color: #062331;
+    cursor: pointer;
+}
+
+.secondPart button:hover{
+    background-color: #062331;
+    cursor: pointer;
+}
+
+
+@media(max-width:550px){
+    .filaUno{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }    
+
+    .continents{
+        padding:  25px 5px 25px 25px;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .actividades{
+        display: flex;
+        padding-top: 25px;
+        height: 60px;
+        width: fit-content;
+    }
+
+    .search input{
+        display: flex;
+        width: 75%;
+        margin-top: 25px;
+    }
+}
