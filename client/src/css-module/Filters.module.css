@@ -30,6 +30,7 @@
     margin:4px
 }
 
+
 .ordenamiento{
     padding-top: 25px;
     width: 35%;
@@ -45,9 +46,23 @@
 }
 
 .actividades{
-    display: inline-block;
+    display: flex;
     padding-top: 25px;
     height: 80px;
+}
+
+.butActivities {
+    padding: 5px;
+    width: 100px;
+    background-color: transparent;
+    border:1px black solid;
+    color: white;
+    margin:4px
+}
+
+.butActivities:hover {
+    background-color: #062331;
+    cursor: pointer;
 }
 
 .actividades fieldset{

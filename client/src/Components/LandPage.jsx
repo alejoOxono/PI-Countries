@@ -34,7 +34,7 @@ const LandPage = () => {
             <div className={styles.back}>
                 <div className={styles.but}>
                 <Link to='/countries'>
-                        <button type='button' >Comenzar</button>
+                        <button type='button' ><p>Clik Para Entrar</p></button>
                     </Link>
                 </div>
             </div>

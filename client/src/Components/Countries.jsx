@@ -8,6 +8,7 @@ import AllCountries from './AllCountries';
 import Footer from './Footer';
 import Pagination from './Pagination';
 import Filter from './Filters';
+import { Link } from 'react-router-dom';
 
 const Countries = () => {
 
@@ -58,13 +59,17 @@ const Countries = () => {
             <div className='Search' >
                 <Filter paginar={paginar} setOrden={setOrden} />
             </div>
-            
+
             <div className='Body'></div>
 
             {currentCountriesShow.map((el) => {
                 return (
                     <div className={bodyIter()}>
-                        <AllCountries el={el} />
+
+                        <Link className='linkCountries' to={`/countries/${el.id}`}>
+                            <AllCountries el={el} />
+                        </Link>
+
                     </div>
                 )
             })}

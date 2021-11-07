@@ -1,0 +1,15 @@
+.all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkedin {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+}
+
+.nombre {
+    color: white;
+}

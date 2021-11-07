@@ -89,9 +89,11 @@ const Pagination = ({ pageFunction, data, current }) => {
     return (
         <nav className={style.all}>
             <button className={style.previous} onClick={(e) => previous(e, current)}> {'<'} </button>
+
             <ul className={style.listaPag}>
                 {renderPageNumber}
             </ul>
+            
             <button className={style.next} onClick={(e) => next(e, current)}> {'>'} </button>
         </nav>
     )

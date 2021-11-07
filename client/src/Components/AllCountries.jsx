@@ -5,12 +5,11 @@ const AllCountries = ({ el }) => {
 
     return (
         <div className={styles.all}>
-            <Link to={`/countries/${el.id}`}>
-                <p style={{textAlign:'center'}}><b>{el.name}</b></p>
-            </Link>
+
+            <p style={{ textAlign: 'center' }}><b>{el.name}</b></p>
 
             <figure className={styles.cuadro}>
-            <img src={el.flag} alt='flag' />
+                <img src={el.flag} alt='flag' />
             </figure>
 
 

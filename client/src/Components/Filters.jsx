@@ -15,7 +15,7 @@ const Filter = ({ paginar, setOrden }) => {
     const searchByCountry = (e) => {
         e.preventDefault();
         dispatch(searchCountry(e.target.value))
-        setOrden(`Encontrado ${e.target.value}`)
+        setOrden(`Finded ${e.target.value}`)
     }
 
     const handlerContinent = (e) => {
@@ -28,14 +28,14 @@ const Filter = ({ paginar, setOrden }) => {
         e.preventDefault()
         dispatch(filterCountriesOrdName(e.target.value));
         paginar(1);
-        setOrden(`Ordenado ${e.target.value}`)
+        setOrden(`OrdenadoByName ${e.target.value}`)
     }
 
     const handlerPopulation = (e) => {
         e.preventDefault()
         dispatch(filterCountriesOrdPopulation(e.target.value));
         paginar(1);
-        setOrden(`Ordenado ${e.target.value}`)
+        setOrden(`OrdenadoByPopulation ${e.target.value}`)
     }
 
     const handlerActivity = (e) => {
@@ -46,7 +46,7 @@ const Filter = ({ paginar, setOrden }) => {
         e.preventDefault();
         dispatch(searchCountryByActivity(activity));
         paginar(1);
-        setOrden(`Ordenado ${e.target.value}`)
+        setOrden(`FindedByActivity ${e.target.value}`)
     }
 
     return (

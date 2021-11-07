@@ -3,6 +3,10 @@
     
 }
 
+.linkCountries{
+    text-decoration: none;
+}
+
 .contFig{
     margin: 0;
     margin-left: 5%;
@@ -29,8 +33,6 @@
 }
 
 .home p{
-    text-decoration: none;
-    text-decoration-line: none;
     display: flex;
     justify-content: center;
     margin: 50px 0 0 0;
@@ -41,6 +43,10 @@
     font-weight: bold;
     font-size: medium;
     color: #582626;
+}
+
+.home p:hover {
+    color: navy;
 }
 
 .activity{
