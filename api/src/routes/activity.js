@@ -12,7 +12,7 @@ router.post('/activity', async (req, res) => {
     let para = req.body;
 
     await bulkActivityBD(para);
-    res.send('correcto');
+    res.json({response:'correcto'});
 })
 
 router.get('/activity', async(req, res, next) => {
