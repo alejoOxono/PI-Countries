@@ -1,10 +1,11 @@
-import { ADD_ACTIVITY, COUNTRY_SELECTED, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_ACTIVITIES, GET_COUNTRIES, SEARCH_COUNTRY_BY_ACTIVITY, SEARCH_COUNTRY_BY_NAME } from "../actions/constants";
+import { ADD_ACTIVITY, COUNTRY_SELECTED, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_ACTIVITIES, GET_COUNTRIES, SEARCH_COUNTRY_BY_ACTIVITY, SEARCH_COUNTRY_BY_NAME, VISUAL } from "../actions/constants";
 
 const stateInitial = {
     dataBaseCountry: [],
     dataBaseActivities: [],
     countriesFiltered: [],
     countryPage: {},
+    valueVisual: false,
 }
 
 const rootReduce = (state = stateInitial, { type, payload }) => {
@@ -110,6 +111,12 @@ const rootReduce = (state = stateInitial, { type, payload }) => {
             return {
                 ...state,
                 countriesFiltered: payload ? payload : state.dataBaseCountry
+            }
+
+        case VISUAL:
+            return {
+                ...state,
+                valueVisual: payload
             }
 
         default:

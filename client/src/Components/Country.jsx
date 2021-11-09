@@ -1,22 +1,38 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { countrySelected } from '../actions/actionsCreator';
 import styles from '../css-module/Country.module.css';
 import Nav from './Nav';
-import Footer from './Footer';
 
 
 const Country = () => {
     const { id } = useParams();
+    const [posc, setPosc] = useState(0);
     const country = useSelector((state) => state.countryPage);
     const dispatch = useDispatch();
-
 
     useEffect(() => {
         dispatch(countrySelected(id))
     }, [dispatch])
 
+    const handlePrevious = (e) => {
+        e.preventDefault();
+        if (posc >= 1) {
+            setPosc(posc - 1)
+        } else {
+            setPosc(country.activities.length - 1)
+        }
+    }
+
+    const handleNext = (e) => {
+        e.preventDefault();
+        if (posc < country.activities.length - 1) {
+            setPosc(posc + 1)
+        } else {
+            setPosc(0)
+        }
+    }
 
     return (
         <div className={styles.gridContainer}>
@@ -63,21 +79,33 @@ const Country = () => {
             </div>
 
             <div className={styles.Activity}>
+            {
+                        country.activities?.[posc] ?
+                                <button type='button' onClick={(e) => handlePrevious(e)}><p>{'<'}</p></button>
+                            : null
+                    }
                 <div className={styles.activities}>
                     <h2>Actividades</h2>
-                    {country.activities?.map((activity) => {
-                        return <>
-                            <ul>
-                                <u><b>{activity.name}</b></u>
-                                <li><b>Dificultad: </b>{activity.dificulty}</li>
-                                <li><b>Duración: </b>{activity.duration} Horas</li>
-                                <li><b>Temporada: </b>{activity.season}</li>
-                            </ul>
-                        </>
-                    })}
+                    {
+                        country.activities?.[posc] ?
+                            <>
+                                <ul>
+                                    <p><b>{country.activities[posc].name}</b></p>
+                                    <li><b>Dificultad: </b>{country.activities[posc].dificulty}</li>
+                                    <li><b>Duración: </b>{country.activities[posc].duration} Horas</li>
+                                    <li><b>Temporada: </b>{country.activities[posc].season}</li>
+                                </ul>
+                                <p>actividad {posc + 1} de {country.activities.length}</p>
+                            </>
+                            : null
+                    }
                 </div>
+                    {
+                        country.activities?.[posc] ?
+                                <button type='button' onClick={(e) => handleNext(e)}><p>{'>'}</p></button>
+                            : null
+                    }
             </div>
-
 
             <div className={styles.nada}></div>
             <div className={styles.nada2}></div>

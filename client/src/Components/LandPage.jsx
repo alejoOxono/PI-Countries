@@ -27,10 +27,7 @@ const LandPage = () => {
     return (
         
         <div className={styles.gridContainer}>
-            <div className="nada"></div>
-            <div className="nada2"></div>
-            <div className="nada3"></div>
-            <div className="nada4"></div>
+
             <div className={styles.back}>
                 <div className={styles.but}>
                 <Link to='/countries'>

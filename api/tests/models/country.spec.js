@@ -1,11 +1,15 @@
-const { Country, conn } = require('../../src/db.js');
+const { conn } = require('../../src/db.js');
 const { expect } = require('chai');
+const { Country } = conn.models;
+const {  DataTypes } = require('sequelize');
+
 
 describe('Country model', () => {
   before(() => conn.authenticate()
     .catch((err) => {
       console.error('Unable to connect to the database:', err);
     }));
+
   describe('Validators', () => {
     beforeEach(() => Country.sync({ force: true }));
     describe('name', () => {
@@ -58,5 +62,6 @@ describe('Country model', () => {
         Country.create({ continent: 'América' });
       });
     });
+    
   });
 });

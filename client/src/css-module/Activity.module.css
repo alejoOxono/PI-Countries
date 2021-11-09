@@ -1,9 +1,18 @@
 .linkActivity{
     text-decoration: none;    
-    color: black;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+    padding-bottom: 15px;
+    border-bottom: 2px #582626 solid;
+    padding-left: 15px;
+    font-family: serif;
+    font-weight: bold;
+    font-size:medium;
+    color: #582626;
 }
 
-a:hover{
+.linkActivity:hover{
     color: navy;
 }
 
@@ -19,6 +28,22 @@ a:hover{
     padding: 10px 20px;
     margin: 2% auto;
     position: relative;
+}
+
+.modalContenido a {
+   
+    text-decoration: none;
+    color: black;
+    border: 2px #2f4858 solid;
+    border-radius: 50%;
+    padding: 0 5px 0 5px;
+
+}
+
+.modalContenido a:hover{
+    color: navy;
+    background-color: #2f4858;
+    color: azure;
 }
 
 .modal{
@@ -44,19 +69,28 @@ a:hover{
     background-color: azure;
 }
 
-.linkActivity{
+
+/* DARK ELEMENTS */
+
+.linkActivityDark {
+    text-decoration: none;    
     display: flex;
     justify-content: center;
     margin: 50px 0 0 0;
     padding-bottom: 15px;
-    border-bottom: 2px #582626 solid;
+    border-bottom: 2px #00cfe5 solid;
     padding-left: 15px;
     font-family: serif;
     font-weight: bold;
     font-size:medium;
-    color: #582626;
+    color: #00cfe5;
+}   
 
+.linkActivityDark:hover{
+    color: white;
 }
+
+
 
 @media(max-width:550px){
     

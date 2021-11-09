@@ -42,11 +42,6 @@
 .nada2 { grid-area: 3 / 5 / 8 / 6; }
 
 
-
-.Nav{
-  box-shadow: 0 10px 20px -5px rgba(119, 63, 63, 0.125);
-}
-
 .Body { 
   width: 100%;
   height: 100%;
@@ -101,6 +96,65 @@
   display: flex;
 }
 
+
+/* DARK ELEMENTS */
+.NavDark {
+  grid-area: 1 / 1 / 2 / 6; 
+  background-color: black;
+}
+
+.SearchDark{
+  grid-area: 3 / 2 / 4 / 5;
+  background-color: rgb(2, 19, 27);
+  color: white;
+  display: flex;
+}
+
+.nadaDark { grid-area: 3 / 1 / 8 / 2; }
+
+.nada2Dark { grid-area: 3 / 5 / 8 / 6; }
+
+.nadaDark,.nada2Dark {
+  background-color: rgb(18, 19, 20);
+}
+
+.ImagenesDark{
+  grid-area: 2 / 1 / 3 / 6;
+  border-bottom: 2px solid  rgba(6, 35, 49, 1);
+  background-color: rgb(18, 19, 20);
+}
+
+.FooterDark{
+  grid-area: 8 / 1 / 9 / 6;
+  background-color: black;
+}
+
+.BodyDark { 
+  grid-area: 4 / 2 / 7 / 5; 
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: -1;
+}
+
+.BodyDark::before {
+  content: "";
+  background-image: url('../assets/SprinkleDark.svg');
+  opacity: 0.95;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -2;   
+}
+
+.PaginacionDark { 
+  grid-area: 7 / 2 / 8 / 5; 
+  background-color: rgb(2, 19, 27);
+}
+
 @media(max-width:1100px){
 
   .Body1, .Body2, .Body3, .Body4, .Body5, .Body6, .Body7, .Body8, .Body9{
@@ -116,6 +170,9 @@
   .nada,.nada2{
     display: none;
   }
+  .nadaDark,.nada2Dark{
+    display: none;
+  }
 
 }
 @media(max-width:700px){
@@ -127,9 +184,17 @@
   
   }
   .Nav { grid-area: 1 / 1 / 2 / 2; }
+  .NavDark { grid-area: 1 / 1 / 2 / 2; }
+
   .Imagenes { grid-area: 2 / 1 / 3 / 2; }
+  .ImagenesDark { grid-area: 2 / 1 / 3 / 2; }
+
   .Search { grid-area: 3 / 1 / 4 / 2; }
+  .SearchDark { grid-area: 3 / 1 / 4 / 2; }
+
   .Body { grid-area: 4 / 1 / 13 / 2; }
+  .BodyDark { grid-area: 4 / 1 / 13 / 2; }
+
   .Body1 { grid-area: 4 / 1 / 5 / 2; }
   .Body2 { grid-area: 5 / 1 / 6 / 2; }
   .Body3 { grid-area: 6 / 1 / 7 / 2; }
@@ -139,14 +204,19 @@
   .Body7 { grid-area: 10 / 1 / 11 / 2; }
   .Body8 { grid-area: 11 / 1 / 12 / 2; }
   .Body9 { grid-area: 12 / 1 / 13 / 2; }
+
   .Paginacion { grid-area: 13 / 1 / 14 / 2; }
+  .PaginacionDark { grid-area: 13 / 1 / 14 / 2; }
+
+
+  .FooterDark { grid-area: 14 / 1 / 15 / 2; }
   .Footer { grid-area: 14 / 1 / 15 / 2; }
 
   .Body1, .Body2, .Body3, .Body4, .Body5, .Body6, .Body7, .Body8, .Body9{
 
     padding: 0;
     display: flex;
-    margin-left: 50px;
+    margin-left: 18px;
     justify-content: center;
   }
   

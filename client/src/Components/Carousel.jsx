@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import styles from '../css-module/Carousel.module.css'
 
 const Carousel = () => {
+    
+    const valueVisual = useSelector((state) => state.valueVisual);
+
     const [imag, setImag] = useState([]);
     const countries = useSelector((state) => state.dataBaseCountry);
 
@@ -25,8 +28,8 @@ const Carousel = () => {
 
 
     return (
-        <div className={styles.all}>
-            <div className={styles.slider}>
+        <div className={valueVisual ? styles.allDark : styles.all}>
+            <div className={valueVisual ? styles.sliderDark : styles.slider}>
                 <div className={styles.slideTrack}>
                     {arryCtrl.map((el) => {
                         return<>

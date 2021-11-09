@@ -55,6 +55,79 @@ label{
     justify-content: center;
 }
 
+.submit button {
+    margin-top: -10px;
+    border: none;
+    background-color: #2f4858;
+    color: azure;
+    padding: 4px 10px 4px 10px;
+    border-radius: 10px;
+    transition: 0.3 ease all;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.submit button span {
+    position: relative;
+    z-index: 2;
+    transition: 0.3 ease all;
+}
+
+.submit button::after {
+    content: "";
+    width: 150px;
+    height: 100%;
+    clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+    background: rgba(54, 1, 1, 0.959);
+    position: absolute;
+    z-index: 1;
+    left: -149px;
+    bottom: 0;
+    transition: 0.3s ease-in-out all;
+  }
+  
+  .submit button:hover::after {
+    left: 0;
+  }
+
+.seleccion button {
+    border: none;
+    background-color: #2f4858;
+    color: azure;
+    padding: 4px 10px 4px 10px;
+    border-radius: 10px;
+    transition: 0.3 ease all;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.seleccion button span {
+    position: relative;
+    z-index: 2;
+    transition: 0.3 ease all;
+}
+
+.seleccion button::after {
+    content: "";
+    width: 80px;
+    height: 100%;
+    clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+    background: rgba(54, 1, 1, 0.959);
+    position: absolute;
+    z-index: 1;
+    left: -80px;
+    bottom: 0;
+    transition: 0.3s ease-in-out all;
+  }
+  
+.seleccion button:hover::after {
+    left: 0;
+  }
+
 .agregados{
     height: 15px;
     margin: 0;

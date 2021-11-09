@@ -64,6 +64,11 @@
   left: 0;
 }
 
+.container div{
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+}
 
 @media(max-width:600px){
   .back {
@@ -72,13 +77,13 @@
     background-size: 80% 80%;
     background-position: center;
     background-repeat: no-repeat;
-    -moz-animation: cssAnimationBack 0s ease-in 7s forwards;
+    -moz-animation: cssAnimationBack 0s ease-in 5s forwards;
     /* Firefox */
-    -webkit-animation: cssAnimationBack 0s ease-in 7s forwards;
+    -webkit-animation: cssAnimationBack 0s ease-in 5s forwards;
     /* Safari and Chrome */
-    -o-animation: cssAnimationBack 0s ease-in 7s forwards;
+    -o-animation: cssAnimationBack 0s ease-in 5s forwards;
     /* Opera */
-    animation: cssAnimationBack 0s ease-in 7s forwards;
+    animation: cssAnimationBack 0s ease-in 5s forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -89,7 +94,7 @@
     background-size: 80% 80%;
     background-position: center;
     background-repeat: no-repeat;
-    transition: 5s;
+    transition: 4s;
     transition-delay: 3s;
     opacity: 100;
     z-index: 3;
@@ -103,7 +108,7 @@
       background-size: 80% 80%;
       background-position: center;
       background-repeat: no-repeat;
-      transition: 10s;
+      transition: 5s;
       opacity: 100;
       z-index: 3;
     }
@@ -115,7 +120,7 @@
       background-size: 80% 80%;
       background-position: center;
       background-repeat: no-repeat;
-      transition: 10s;
+      transition: 5s;
       opacity: 100;
       z-index: 3;
     }
@@ -129,13 +134,14 @@
     background-size: 80% 80%;
     background-position: center;
     background-repeat: no-repeat;
-    -moz-animation: cssAnimationBack 0s ease-in 7s forwards;
+    overflow: hidden;
+    -moz-animation: cssAnimationBack 0s ease-in 5s forwards;
     /* Firefox */
-    -webkit-animation: cssAnimationBack 0s ease-in 7s forwards;
+    -webkit-animation: cssAnimationBack 0s ease-in 5s forwards;
     /* Safari and Chrome */
-    -o-animation: cssAnimationBack 0s ease-in 7s forwards;
+    -o-animation: cssAnimationBack 0s ease-in 5s forwards;
     /* Opera */
-    animation: cssAnimationBack 0s ease-in 7s forwards;
+    animation: cssAnimationBack 0s ease-in 5s forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -146,7 +152,7 @@
     background-size: 80% 80%;
     background-position: center;
     background-repeat: no-repeat;
-    transition: 5s;
+    transition: 4s;
     transition-delay: 3s;
     opacity: 100;
     z-index: 3;
@@ -160,7 +166,7 @@
       background-size: 80% 80%;
       background-position: center;
       background-repeat: no-repeat;
-      transition: 10s;
+      transition: 5s;
       opacity: 100;
       z-index: 3;
     }
@@ -172,7 +178,7 @@
       background-size: 80% 80%;
       background-position: center;
       background-repeat: no-repeat;
-      transition: 10s;
+      transition: 5s;
       opacity: 100;
       z-index: 3;
     }
@@ -191,10 +197,11 @@
   -moz-transform: translateX(0%);
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
-  
-  -moz-animation: my-animation 9s linear infinite;
-  -webkit-animation: my-animation 9s linear infinite;
-  animation: my-animation 9s linear infinite;
+  max-width: 50%;
+
+  -moz-animation: my-animation 5s linear infinite;
+  -webkit-animation: my-animation 5s linear infinite;
+  animation: my-animation 5s linear infinite;
 }
 
 /* for Firefox */
@@ -230,25 +237,66 @@
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
+  max-width: 50%;
   
-  -moz-animation: my-animationdos 15s linear infinite;
-  -webkit-animation: my-animationdos 15s linear infinite;
-  animation: my-animationdos 15s linear infinite;
+  -moz-animation: my-animationdos 14s linear infinite;
+  -webkit-animation: my-animationdos 14s linear infinite;
+  animation: my-animationdos 14s linear infinite;
 }
 
 /* for Firefox */
 @-moz-keyframes my-animationdos {
   from { -moz-transform: translateX(100%); }
-  to { -moz-transform: translateX(-100%); }
+  to { -moz-transform: translateX(0%); }
 }
 
 /* for Chrome */
 @-webkit-keyframes my-animationdos {
   from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(-100%); }
+  to { -webkit-transform: translateX(0%); }
 }
 
 @keyframes my-animationdos {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+/* Animations  TEXT3*/
+
+
+.textTres {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  max-width: 50%;
+
+  -moz-animation: my-animationtres 12s linear infinite;
+  -webkit-animation: my-animationtres 12s linear infinite;
+  animation: my-animationtres 12s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animationtres {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animationtres {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animationtres {
   from {
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
@@ -261,75 +309,37 @@
   }
 }
 
-/* Animations  TEXT3*/
-
-
-.textTres {
-  /* animation properties */
-  -moz-transform: translateX(50%);
-  -webkit-transform: translateX(50%);
-  transform: translateX(50%);
-  
-  -moz-animation: my-animationtres 13s linear infinite;
-  -webkit-animation: my-animationtres 13s linear infinite;
-  animation: my-animationtres 13s linear infinite;
-}
-
-/* for Firefox */
-@-moz-keyframes my-animationtres {
-  from { -moz-transform: translateX(50%); }
-  to { -moz-transform: translateX(-100%); }
-}
-
-/* for Chrome */
-@-webkit-keyframes my-animationtres {
-  from { -webkit-transform: translateX(50%); }
-  to { -webkit-transform: translateX(-100%); }
-}
-
-@keyframes my-animationtres {
-  from {
-    -moz-transform: translateX(50%);
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
-  }
-  to {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
-
 /* Animations  TEXT4*/
 
 .textCuatro {
   /* animation properties */
-  -moz-transform: translateX(50%);
-  -webkit-transform: translateX(50%);
-  transform: translateX(50%);
-  
-  -moz-animation: my-animationcuatro 20s linear infinite;
-  -webkit-animation: my-animationcuatro 20s linear infinite;
-  animation: my-animationcuatro 20s linear infinite;
+  -moz-transform: translateX(10%);
+  -webkit-transform: translateX(10%);
+  transform: translateX(10%);
+  max-width: 50%;
+
+  -moz-animation: my-animationcuatro 14s linear infinite;
+  -webkit-animation: my-animationcuatro 14s linear infinite;
+  animation: my-animationcuatro 14s linear infinite;
 }
 
 /* for Firefox */
 @-moz-keyframes my-animationcuatro {
-  from { -moz-transform: translateX(50%); }
+  from { -moz-transform: translateX(10%); }
   to { -moz-transform: translateX(100%); }
 }
 
 /* for Chrome */
 @-webkit-keyframes my-animationcuatro {
-  from { -webkit-transform: translateX(50%); }
+  from { -webkit-transform: translateX(10%); }
   to { -webkit-transform: translateX(100%); }
 }
 
 @keyframes my-animationcuatro {
   from {
-    -moz-transform: translateX(50%);
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
+    -moz-transform: translateX(10%);
+    -webkit-transform: translateX(10%);
+    transform: translateX(10%);
   }
   to {
     -moz-transform: translateX(100%);
@@ -346,22 +356,23 @@
   -moz-transform: translateX(20%);
   -webkit-transform: translateX(20%);
   transform: translateX(20%);
-  
-  -moz-animation: my-animationcinco 10s linear infinite;
-  -webkit-animation: my-animationcinco 10s linear infinite;
-  animation: my-animationcinco 10s linear infinite;
+  max-width: 50%;
+
+  -moz-animation: my-animationcinco 9s linear infinite;
+  -webkit-animation: my-animationcinco 9s linear infinite;
+  animation: my-animationcinco 9s linear infinite;
 }
 
 /* for Firefox */
 @-moz-keyframes my-animationcinco {
   from { -moz-transform: translateX(20%); }
-  to { -moz-transform: translateX(80%); }
+  to { -moz-transform: translateX(100%); }
 }
 
 /* for Chrome */
 @-webkit-keyframes my-animationcinco {
   from { -webkit-transform: translateX(20%); }
-  to { -webkit-transform: translateX(80%); }
+  to { -webkit-transform: translateX(100%); }
 }
 
 @keyframes my-animationcinco {
@@ -371,9 +382,9 @@
     transform: translateX(20%);
   }
   to {
-    -moz-transform: translateX(80%);
-    -webkit-transform: translateX(80%);
-    transform: translateX(80%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
   }
 }
 
@@ -385,7 +396,8 @@
   -moz-transform: translateX(80%);
   -webkit-transform: translateX(80%);
   transform: translateX(80%);
-  
+  max-width: 50%;
+
   -moz-animation: my-animationseis 10s linear infinite;
   -webkit-animation: my-animationseis 10s linear infinite;
   animation: my-animationseis 10s linear infinite;

@@ -8,6 +8,8 @@ import { useHistory } from 'react-router-dom'
 
 const Activity = () => {
     const history = useHistory();
+    const valueVisual = useSelector((state) => state.valueVisual);
+
 
     const [activity, setActivity] = useState({
         country: [],
@@ -34,8 +36,11 @@ const Activity = () => {
         dispatch(addActivity(activity));
         setCountriesSelected([])
         setActivity({
-            ...activity,
-
+            country: [],
+            name: '',
+            dificulty: '',
+            duration: '',
+            season: ''
         })
         history.goBack()
     }
@@ -59,11 +64,11 @@ const Activity = () => {
 
     return (
         <>
-            <a className={styles.linkActivity} href="#activity">Actividades</a>
+            <a className={valueVisual ? styles.linkActivityDark : styles.linkActivity} href="#activity">Actividades</a>
             <div id='activity' className={styles.modal}>
                 <div className={styles.modalContenido}>
                     <a href="#">X</a>
-                    <h1>Crear Actividad</h1>
+                    <h1 style={{ textAlign: 'center' }}>Crear Actividad</h1>
                     <p>Con esta forma podrás indicar que actividades de interés
                         se pueden realizar en algún país y detallarles ciertas características</p>
 

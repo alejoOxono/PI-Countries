@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 
 const Countries = () => {
 
+    const valueVisual = useSelector((state) => state.valueVisual);
     const countries = useSelector((state) => state.countriesFiltered);
     const dispatch = useDispatch();
 
@@ -46,21 +47,21 @@ const Countries = () => {
     return (
         <div className='gridContainer'>
 
-            <div className='Nav'>
+            <div className={valueVisual ? 'NavDark' : 'Nav'}>
                 <Nav />
             </div>
 
-            <div className='Imagenes'>
+            <div className={valueVisual ? 'ImagenesDark' : 'Imagenes'} >
                 <Carousel />
             </div>
 
-            <div className="nada"></div>
+            <div className={valueVisual ? 'nadaDark' : 'nada'} ></div>
 
-            <div className='Search' >
+            <div className={valueVisual ? 'SearchDark' : 'Search'} >
                 <Filter paginar={paginar} setOrden={setOrden} />
             </div>
 
-            <div className='Body'></div>
+            <div className={valueVisual ? 'BodyDark' : 'Body'} ></div>
 
             {currentCountriesShow.map((el) => {
                 return (
@@ -74,11 +75,11 @@ const Countries = () => {
                 )
             })}
 
-            <div className="nada2"></div>
-            <div className='Paginacion'>
+            <div className={valueVisual ? 'nada2Dark' : 'nada2'}></div>
+            <div className={valueVisual ? 'PaginacionDark' : 'Paginacion'}>
                 <Pagination pageFunction={paginar} data={dataPerPage} current={currentPage} />
             </div>
-            <div className='Footer'>
+            <div className={valueVisual ? 'FooterDark' : 'Footer'} >
                 <Footer />
             </div>
         </div>

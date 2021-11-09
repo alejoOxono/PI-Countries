@@ -1,4 +1,4 @@
-import { ADD_ACTIVITY, COUNTRY_SELECTED, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_ACTIVITIES, GET_COUNTRIES, SEARCH_COUNTRY_BY_ACTIVITY, SEARCH_COUNTRY_BY_NAME } from "./constants";
+import { ADD_ACTIVITY, COUNTRY_SELECTED, FILTER_COUNTRIES_BY_CONTINENT, FILTER_COUNTRIES_ORD_NAME, FILTER_COUNTRIES_ORD_POPULATION, GET_ACTIVITIES, GET_COUNTRIES, SEARCH_COUNTRY_BY_ACTIVITY, SEARCH_COUNTRY_BY_NAME, VISUAL } from "./constants";
 const axios = require('axios');
 
 export const getCountries = () => {
@@ -125,4 +125,9 @@ export const searchCountryByActivity = (activity) => {
     }
 }
 
-
+export const visual = (value) => {
+    return{
+        type: VISUAL,
+        payload: value
+    }
+} 

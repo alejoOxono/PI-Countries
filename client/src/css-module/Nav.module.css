@@ -61,12 +61,27 @@
     clip-path: ellipse(100% 99% at 100% 100%);
 }
 
-@media(max-width:700px) {
-    .adicion{
-        display: none;
-    }
+.visual {
+    display: flex;
+    width: 100px;
+    height: 100%;
 }
 
+.iconos {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+    width: 100px;
+    height: 20px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.sun {
+    background-color: #f9f871;
+    border-radius: 50%;
+    width: 20px;
+}
 
 .adicion2{
     height: 100%;
@@ -93,10 +108,90 @@
 }
 
 
+/* DARK ELEMENTS */
+
+.allDark {
+    display: flex;
+    background-color: black;
+}
+
+.homeDark{
+    width: 250px;
+    height: 100%;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.homeDark p{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+    padding-bottom: 15px;
+    padding-right: -15px;
+    border-bottom: 2px #00cfe5 solid;
+    font-family: serif;
+    font-weight: bold;
+    font-size: medium;
+    color: #00cfe5;
+}
+
+.homeDark p:hover {
+    color: white;
+}
+
+.adicionDark {
+    display: flex;
+    height: 100%;
+    width: 100%; 
+    background-color: #00cfe5;
+    clip-path: ellipse(100% 99% at 100% 100%);
+}
+
+.adicion2Dark {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    clip-path: ellipse(100% 75% at 100% 100%);
+
+}
+
+
+.adicion3Dark {
+    height: 100%;
+    width: 100%;
+    background-color: #FF8B0B;
+    clip-path: ellipse(100% 50% at 100% 100%);
+}
+
+
+.adicion4Dark {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    clip-path: ellipse(100% 25% at 100% 100%);
+}
+
+
+@media(max-width:700px) {
+    .adicion{
+        display: none;
+    }
+    .adicionDark{
+        display: none;
+    }
+}
+
+
+
+
 
 @media(max-width:700px) {
 
     .home{
+        width: 200px;
+        height: 100%;
+    }
+    .homeDark{
         width: 200px;
         height: 100%;
     }
@@ -112,9 +207,24 @@
         width: 100px;
         height: 100%;
     }
+    .homeDark{
+        width: 100px;
+        height: 100%;
+    }
+    
+    .home p {
+        margin-left: 20px;
+    }
+    .homeDark p {
+        margin-left: 20px;
+    }
 
     .activity{
         width: 100px;
+    }
+
+    .activity p {
+        padding-left: 10px;
     }
 
     .contFig{
@@ -132,7 +242,13 @@
 
 @media(max-width:450px) {
 
-    .home{
+    .home {
+        width: 60px;
+        height: 100%;
+        padding: 0;
+        margin-left: -20px;
+    }
+    .homeDark {
         width: 60px;
         height: 100%;
         padding: 0;

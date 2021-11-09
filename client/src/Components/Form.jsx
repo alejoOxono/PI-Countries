@@ -6,12 +6,13 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
 
     const reg = new RegExp('^[0-9]+$');
     const regEx = new RegExp(/^[A-Za-z]+$/);
-    
+
     const pushCountries = (country) => {
-        console.log(typeof country);
+        if( country.length > 0) return null
         if(regEx.test(country)) return null
         else return 'Introducir País'
     }
+            
 
     return (
         <div className={styles.gridContainer}>
@@ -26,7 +27,7 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                                 <option value={country.id} />
                             )}
                         </datalist>
-                        <button type='submit' onClick={(e) => submitCountries(e)}>Añadir</button>
+                        <button type='submit' onClick={(e) => submitCountries(e)}><span>Añadir</span></button>
                     </form>
                 </div>
                 <div className={styles.warning}><p>{pushCountries(activity.country)}</p></div>
@@ -46,14 +47,14 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                         <label htmlFor="name">Nombre de actividad: </label>
                         <input required type='text' placeholder='Actividad...' name='name' />
                     </div>
-                    <div className={styles.warning}><p>{regEx.test(activity.name) ? null:'Introducir nombre de actividad'}</p></div>
+                    <div className={styles.warning}><p>{regEx.test(activity.name) ? null : 'Introducir nombre de actividad'}</p></div>
 
 
                     <div className={styles.duracion}>
                         <label htmlFor="duration">Duración de actividad: </label>
                         <input type='text' placeholder='Duración en Horas...' name='duration' />
                     </div>
-                    <div className={styles.warning}><p>{ reg.test(activity.duration) ? null:'Introducir duración de actividad en cantidad de horas'}</p></div>
+                    <div className={styles.warning}><p>{reg.test(activity.duration) ? null : 'Introducir duración de actividad en cantidad de horas'}</p></div>
 
                     <div className={styles.dificultad}>
                         <fieldset>
@@ -70,7 +71,7 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                             <input type='radio' name='dificulty' value='5' />
                         </fieldset>
                     </div>
-                    <div className={styles.warning}><p>{activity.dificulty ? null:'Introducir Dificultad'}</p></div>
+                    <div className={styles.warning}><p>{activity.dificulty ? null : 'Introducir Dificultad'}</p></div>
 
                     <div className={styles.temporada}>
                         <fieldset>
@@ -85,10 +86,10 @@ const Form = ({ activity, handleCountries, submitCountries, handleForm, formSubm
                             <input type='radio' name='season' value='primavera' />
                         </fieldset>
                     </div>
-                    <div className={styles.warning}><p>{activity.season ? null:'Introducir Temporada'}</p></div>
+                    <div className={styles.warning}><p>{activity.season ? null : 'Introducir Temporada'}</p></div>
 
                     <div className={styles.submit}>
-                        <button type='submit' onClick={(e) => formSubmit(e)}>Añadir Actividad</button>
+                        <button type='submit' onClick={(e) => formSubmit(e)}><span>Añadir Actividad</span></button>
                     </div>
 
                 </form>
