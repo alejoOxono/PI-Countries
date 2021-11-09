@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Pagination from './Pagination';
 import Filter from './Filters';
 import { Link } from 'react-router-dom';
+import notFound from '../assets/notFound.jpg'
 
 const Countries = () => {
 
@@ -61,7 +62,16 @@ const Countries = () => {
                 <Filter paginar={paginar} setOrden={setOrden} />
             </div>
 
-            <div className={valueVisual ? 'BodyDark' : 'Body'} ></div>
+            <div className={valueVisual ? 'BodyDark' : 'Body'} >
+                {currentCountriesShow.length === 0 ?
+                    <div className='notFound'>
+                        <figure>
+                            <img src={notFound} alt="notFound" />
+                        </figure>
+                    </div>
+                    : null}
+
+            </div>
 
             {currentCountriesShow.map((el) => {
                 return (

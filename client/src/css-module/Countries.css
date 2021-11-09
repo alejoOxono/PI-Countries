@@ -96,6 +96,17 @@
   display: flex;
 }
 
+.notFound {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.notFound img {
+  width: 200px;
+  height: auto;
+}
+
 
 /* DARK ELEMENTS */
 .NavDark {

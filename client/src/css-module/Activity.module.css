@@ -90,11 +90,46 @@
     color: white;
 }
 
+.modalContenidoDark {
+    background-image: url('../assets/WorldMap.svg');
+    background-color: rgb(18, 19, 20);
+    width:700px;
+    height: 500px;
+    padding: 10px 20px;
+    margin: 2% auto;
+    position: relative;
+}
+
+.modalContenidoDark a {
+   
+    text-decoration: none;
+    color: white;
+    border: 2px #2f4858 solid;
+    border-radius: 50%;
+    padding: 0 5px 0 5px;
+
+}
+
+.modalContenidoDark a:hover{
+    background-color: #00cfe5;
+    color: black;
+}
+
+.modalContenidoDark p, .modalContenidoDark h1{
+    background-color: rgb(18, 19, 20);
+    color: rgba(255, 255, 255, 0.712);
+}
+
 
 
 @media(max-width:550px){
     
-    .modalContenido{
+    .modalContenido {
+        width: 380px;
+        height: 700px;
+    }
+
+    .modalContenidoDark {
         width: 380px;
         height: 700px;
     }

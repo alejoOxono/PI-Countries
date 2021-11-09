@@ -72,3 +72,56 @@
     margin: 3px 0 3px 0;
 }
 
+
+
+/* DARK ELEMENTS */
+
+.allDark{
+    display: inline-flex;
+    flex-direction: column;
+    width: 225px;
+    height: 300px;
+    border: 5px #007986 solid;
+    padding: 10%;
+    border-radius: 10%;
+    background-color: #0000007a;
+    position: relative;
+    transition: 0.3 ease all;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.allDark:hover{
+    box-shadow: #4927031f 0px 2px 4px 0px, #492703e0 0px 2px 16px 0px;
+    background-color: #ffffff00;
+}
+
+.allDark::after {
+    content: 'Ver más Información';
+    color: azure;
+    width: 280px;
+    height: 50px;
+    background-color: #492703e0;
+    position: absolute;
+    bottom: -50px;
+    left: 0px;
+    z-index: 1;
+    transition: 0.3s ease-in-out all;
+}
+
+.allDark:hover:after {
+    bottom: 0;
+}
+
+
+.allDark p{
+    color:#b15e06;
+    margin: 8px 0 8px 0;
+}
+
+.allDark h4, .allDark span{
+    color:rgba(255, 255, 255, 0.712);
+}
+
+

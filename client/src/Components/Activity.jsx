@@ -10,7 +10,6 @@ const Activity = () => {
     const history = useHistory();
     const valueVisual = useSelector((state) => state.valueVisual);
 
-
     const [activity, setActivity] = useState({
         country: [],
         name: '',
@@ -19,9 +18,6 @@ const Activity = () => {
         season: ''
     })
 
-    const [countriesSelected, setCountriesSelected] = useState([])
-
-    const countries = useSelector((state) => state.dataBaseCountry);
     const dispatch = useDispatch();
 
     const handleForm = (e) => {
@@ -34,7 +30,6 @@ const Activity = () => {
     const formSubmit = (e) => {
         e.preventDefault();
         dispatch(addActivity(activity));
-        setCountriesSelected([])
         setActivity({
             country: [],
             name: '',
@@ -45,35 +40,25 @@ const Activity = () => {
         history.goBack()
     }
 
-
     const handleCountries = (e) => {
-        setCountriesSelected({
-            ...countriesSelected,
-            country: e.target.value
-        })
-    }
-
-    const submitCountries = (e) => {
-        e.preventDefault();
         setActivity({
             ...activity,
-            country: [...activity.country, countriesSelected.country]
+            country: [...activity.country, e.target.value]
         })
     }
-
 
     return (
         <>
             <a className={valueVisual ? styles.linkActivityDark : styles.linkActivity} href="#activity">Actividades</a>
             <div id='activity' className={styles.modal}>
-                <div className={styles.modalContenido}>
+                <div className={valueVisual ? styles.modalContenidoDark : styles.modalContenido} >
                     <a href="#">X</a>
                     <h1 style={{ textAlign: 'center' }}>Crear Actividad</h1>
                     <p>Con esta forma podrás indicar que actividades de interés
                         se pueden realizar en algún país y detallarles ciertas características</p>
 
                     <Form activity={activity} handleCountries={handleCountries}
-                        submitCountries={submitCountries} handleForm={handleForm} formSubmit={formSubmit} />
+                         handleForm={handleForm} formSubmit={formSubmit} />
                 </div>
             </div>
         </>

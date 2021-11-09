@@ -23,9 +23,6 @@ const Nav = () => {
         dispatch(visual(false));
     }
 
-    console.log(valueVisual)
-
-
     return (
         <nav className={valueVisual ? styles.allDark : styles.all}>
             <figure className={styles.contFig}>

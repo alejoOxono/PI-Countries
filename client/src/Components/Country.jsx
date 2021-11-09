@@ -7,6 +7,8 @@ import Nav from './Nav';
 
 
 const Country = () => {
+    const valueVisual = useSelector((state) => state.valueVisual);
+
     const { id } = useParams();
     const [posc, setPosc] = useState(0);
     const country = useSelector((state) => state.countryPage);
@@ -35,7 +37,7 @@ const Country = () => {
     }
 
     return (
-        <div className={styles.gridContainer}>
+        <div className={valueVisual ? styles.gridContainerDark : styles.gridContainer} >
             <div className={styles.Nav}>
                 <Nav />
             </div>
@@ -78,7 +80,7 @@ const Country = () => {
 
             </div>
 
-            <div className={styles.Activity}>
+            <div className={valueVisual ? styles.ActivityDark : styles.Activity} >
             {
                         country.activities?.[posc] ?
                                 <button type='button' onClick={(e) => handlePrevious(e)}><p>{'<'}</p></button>
@@ -107,11 +109,11 @@ const Country = () => {
                     }
             </div>
 
-            <div className={styles.nada}></div>
-            <div className={styles.nada2}></div>
-            <div className={styles.nada3}></div>
-            <div className={styles.Contenido}></div>
-            <div className={styles.nada4}></div>
+            <div className={valueVisual ? styles.nadaDark : styles.nada} ></div>
+            <div className={valueVisual ? styles.nada2Dark : styles.nada2} ></div>
+            <div className={valueVisual ? styles.nada3Dark : styles.nada3} ></div>
+            <div className={valueVisual ? styles.ContenidoDark : styles.Contenido} ></div>
+            <div className={valueVisual ? styles.nada4Dark : styles.nada4} ></div>
 
 
         </div>

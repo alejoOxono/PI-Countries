@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import styles from '../css-module/AllCountries.module.css'
+
 const AllCountries = ({ el }) => {
+    const valueVisual = useSelector((state) => state.valueVisual);
 
 
     return (
-        <div className={styles.all}>
+        <div className={valueVisual ? styles.allDark : styles.all}>
 
             <p style={{ textAlign: 'center' }}><b>{el.name}</b></p>
 

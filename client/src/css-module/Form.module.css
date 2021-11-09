@@ -11,9 +11,6 @@ label{
     margin-bottom: 4px;
 }
 
-.seleccion input{
-    width: 60%;
-}
 
 .form{
     display: flex;
@@ -92,42 +89,6 @@ label{
     left: 0;
   }
 
-.seleccion button {
-    border: none;
-    background-color: #2f4858;
-    color: azure;
-    padding: 4px 10px 4px 10px;
-    border-radius: 10px;
-    transition: 0.3 ease all;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    z-index: 5;
-}
-
-.seleccion button span {
-    position: relative;
-    z-index: 2;
-    transition: 0.3 ease all;
-}
-
-.seleccion button::after {
-    content: "";
-    width: 80px;
-    height: 100%;
-    clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
-    background: rgba(54, 1, 1, 0.959);
-    position: absolute;
-    z-index: 1;
-    left: -80px;
-    bottom: 0;
-    transition: 0.3s ease-in-out all;
-  }
-  
-.seleccion button:hover::after {
-    left: 0;
-  }
-
 .agregados{
     height: 15px;
     margin: 0;
@@ -143,6 +104,32 @@ label{
     color: #581515;
     width: fit-content;
 }
+
+.selectCountries {
+    border: 4px solid azure;
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 5px;
+}
+
+
+.optionCountries {
+    width: 210px;
+}
+
+
+/* DARK ELEMENTS */
+
+.labelDark {
+    background-color: rgb(18, 19, 20);
+    padding: 5px;
+}
+
+.gridContainerDark {
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.712);
+}
+
 
 @media(max-width:550px){
     
