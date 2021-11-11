@@ -16,7 +16,7 @@ const Country = () => {
 
     useEffect(() => {
         dispatch(countrySelected(id))
-    }, [dispatch])
+    }, [])
 
     const handlePrevious = (e) => {
         e.preventDefault();
