@@ -8,14 +8,14 @@ const router = Router();
 router.use(express.json());
 
 
-router.post('/activity', async (req, res) => {
+router.post('/api/activity', async (req, res) => {
     let para = req.body;
 
     await bulkActivityBD(para);
     res.json({response:'correcto'});
 })
 
-router.get('/activity', async(req, res, next) => {
+router.get('/api/activity', async(req, res, next) => {
     
     try{
         let { name } = req.query;

@@ -5,8 +5,8 @@ const axios = require('axios');
 
 
 export const getCountries = () => {
-    return function (dispatch) {
-        return axios.get(serverFinder('countries'))
+    return async function (dispatch) {
+         return axios.get(serverFinder('countries'))
             .then((data) => {
                 dispatch({
                     type: GET_COUNTRIES,
@@ -14,9 +14,8 @@ export const getCountries = () => {
                 })
             })
             .catch((err) => {
-                //dispatch de error
                 console.log(err);
-            })
+            })           
     }
 }
 
@@ -55,7 +54,6 @@ export const searchCountry = (name) => {
                 })
             })
             .catch((err) => {
-                //dispatch de error
                 console.log(err);
             })
     }
@@ -73,7 +71,6 @@ export const countrySelected = (id) => {
                 })
             })
             .catch((err) => {
-                //dispatch de error
                 console.log(err);
             })
     }
@@ -88,7 +85,6 @@ export const addActivity = (form) => {
             return data
         })
         .catch((err) => {
-            //dispatch de error
             console.log(err);
         })
     }
@@ -104,7 +100,6 @@ export const getActivities = () => {
             })
         })
         .catch((err) => {
-            //dispatch de error
             console.log(err);
         })
     }
@@ -122,7 +117,6 @@ export const searchCountryByActivity = (activity) => {
                 })
             })
             .catch((err) => {
-                //dispatch de error
                 console.log(err);
             })
     }

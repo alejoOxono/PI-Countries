@@ -15,9 +15,9 @@ const activity = {
 
 describe('Activity routes', () => {
 
-  describe('POST /activity', () => {
+  describe('POST /api/activity', () => {
     it('should get "correcto" as msg', () =>
-      agent.post('/activity')
+      agent.post('/api/activity')
         .send(activity)
         .then((res) => {
           expect(res.body.response).equal('correcto')

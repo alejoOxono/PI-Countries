@@ -20,14 +20,14 @@ describe('Country routes', () => {
   }));
   beforeEach(() => Country.sync({ force: true })
     .then(() => Country.create(country)));
-  describe('GET /countries', () => {
+  describe('GET /api/countries', () => {
     it('should get 200', () =>
-      agent.get('/countries').expect(200)
+      agent.get('/api/countries').expect(200)
     );
   });
-  describe('GET /countries/ARG', () => {
+  describe('GET /api/countries/ARG', () => {
     it('should get the info from ARG', () =>
-    agent.get('/countries/ARG').expect([
+    agent.get('/api/countries/ARG').expect([
       {
         id: 'ARG',
         name: 'Argentina',
@@ -44,9 +44,9 @@ describe('Country routes', () => {
       }
     ]))
   });
-  describe('GET /countries', () => {
+  describe('GET /api/countries', () => {
     it('should get the info from ARG', () =>
-    agent.get('/countries').expect([
+    agent.get('/api/countries').expect([
       {
         id: 'ARG',
         name: 'Argentina',
@@ -63,9 +63,9 @@ describe('Country routes', () => {
       }
     ]))
   });
-  describe('GET /countries?name=ARG', () => {
+  describe('GET /api/countries?name=ARG', () => {
     it('should get the info from ARG', () =>
-    agent.get('/countries?name=ARG').expect([
+    agent.get('/api/countries?name=ARG').expect([
       {
         id: 'ARG',
         name: 'Argentina',

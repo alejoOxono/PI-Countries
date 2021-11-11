@@ -6,7 +6,7 @@ const searchCountry = require("../modules/searchCountry");
 const router = Router();
 
 
-router.get('/', async (req, res, next) => {
+router.get('/api', async (req, res, next) => {
     try {
 
         let resultado = await searchCountry();
@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
 })
 
 
-router.get('/countries', async (req, res, next) => {
+router.get('/api/countries', async (req, res, next) => {
     try {
 
         let { name } = req.query;
@@ -31,7 +31,7 @@ router.get('/countries', async (req, res, next) => {
 })
 
 
-router.get('/countries/:idPais', async (req, res, next) => {
+router.get('/api/countries/:idPais', async (req, res, next) => {
     try {
 
         let { idPais } = req.params;
