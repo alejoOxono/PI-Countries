@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.70e295ef.chunk.css",
+    "main.js": "/static/js/main.02baf9bd.chunk.js",
+    "main.js.map": "/static/js/main.02baf9bd.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.14840134.js",
+    "runtime-main.js.map": "/static/js/runtime-main.14840134.js.map",
+    "static/js/2.1a57f42c.chunk.js": "/static/js/2.1a57f42c.chunk.js",
+    "static/js/2.1a57f42c.chunk.js.map": "/static/js/2.1a57f42c.chunk.js.map",
+    "static/js/3.9be5edfd.chunk.js": "/static/js/3.9be5edfd.chunk.js",
+    "static/js/3.9be5edfd.chunk.js.map": "/static/js/3.9be5edfd.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.70e295ef.chunk.css.map": "/static/css/main.70e295ef.chunk.css.map",
+    "static/js/2.1a57f42c.chunk.js.LICENSE.txt": "/static/js/2.1a57f42c.chunk.js.LICENSE.txt",
+    "static/media/LandPage.module.css": "/static/media/countriesAmerica.4791b269.png",
+    "static/media/Countries.css": "/static/media/SprinkleDark.6d0f132c.svg",
+    "static/media/Activity.module.css": "/static/media/WorldMap.90b3f55a.svg",
+    "static/media/linkedinWhite.f4041044.svg": "/static/media/linkedinWhite.f4041044.svg",
+    "static/media/logo_size_invert.45b71be8.png": "/static/media/logo_size_invert.45b71be8.png",
+    "static/media/moon.a3325cc3.svg": "/static/media/moon.a3325cc3.svg",
+    "static/media/notFound.22bff5ce.jpg": "/static/media/notFound.22bff5ce.jpg",
+    "static/media/sun.fa0bdb5b.svg": "/static/media/sun.fa0bdb5b.svg",
+    "static/media/Country.module.css": "/static/media/worldcloud.58788dce.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.14840134.js",
+    "static/js/2.1a57f42c.chunk.js",
+    "static/css/main.70e295ef.chunk.css",
+    "static/js/main.02baf9bd.chunk.js"
+  ]
+}
