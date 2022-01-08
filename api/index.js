@@ -24,8 +24,8 @@ const bulkCountryBD = require('./src/modules/bulkCountryBD.js');
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   try{
-    server.listen(3001, async() => {
-      console.log('%s listening at 3001');
+    server.listen(3002, async() => {
+      console.log('%s listening at 3002');
       await bulkCountryBD(); // eslint-disable-line no-console
     });
   }catch(err){

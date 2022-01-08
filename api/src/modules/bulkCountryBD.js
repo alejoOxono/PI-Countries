@@ -22,7 +22,7 @@ const bulkCountryBD = async () => {
             map: `https://geology.com/world/${country}-map.gif`,
             info: `https://en.wikipedia.org/wiki/${countryInfo}`,
             continent: dato.region ? dato.region : null,
-            capital: dato.capital[0] ? dato.capital[0] : dato.capital ? dato.capital : null,
+            capital: dato.capital?.[0] ? dato.capital[0] : dato.capital ? dato.capital : 'Sin dato',
             region: dato.subregion ? dato.subregion : null,
             area: dato.area,
             population: dato.population
